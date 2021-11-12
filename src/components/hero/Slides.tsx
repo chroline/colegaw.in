@@ -54,6 +54,7 @@ export const HeroSlides = () => (
       :global(.hero-slides .swiper) {
         width: 100% !important;
         height: 100% !important;
+        overflow: visible;
       }
 
       :global(.hero-slides .swiper-slide) {
