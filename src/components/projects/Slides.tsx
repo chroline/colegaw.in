@@ -1,32 +1,36 @@
 import React from "react";
 
-import { AspectRatio, Box, LinkBox, LinkOverlay, useBreakpointValue } from "@chakra-ui/react";
+import { AspectRatio, Box, LinkBox, LinkOverlay, Tooltip, useBreakpointValue } from "@chakra-ui/react";
 import { useAsync, useWindowSize } from "react-use";
 import SwiperCore, { Pagination, Mousewheel } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const _Slide: React.FC<{ id: string }> = ({ id }) => (
-  <LinkBox>
-    <AspectRatio
-      w={{ base: 64, md: "sm", lg: "md" }}
-      ratio={2}
-      background={"white"}
-      boxShadow={"md"}
-      _hover={{ shadow: "lg", mt: -2 }}
-      borderRadius={"lg"}
-      overflow={"hidden"}
-    >
-      <LinkOverlay href={`https://projects.colegaw.in/${id}`} isExternal>
-        <picture>
-          <source srcSet={`/img/projects/${id}.webp`} type="image/webp" />
-          <source srcSet={`/img/projects/${id}.png`} type="image/png" />
-          <img src={`/img/projects/${id}.png`} alt={id} />
-        </picture>
-      </LinkOverlay>
-    </AspectRatio>
-  </LinkBox>
+import projectsData from "../../../data/projects.json";
+
+const _Slide: React.FC<{ id: string; title: string }> = ({ id, title }) => (
+  <Tooltip label={title}>
+    <LinkBox>
+      <AspectRatio
+        w={{ base: 64, md: "sm", lg: "md" }}
+        ratio={2}
+        background={"white"}
+        boxShadow={"md"}
+        _hover={{ shadow: "lg", mt: -2 }}
+        borderRadius={"lg"}
+        overflow={"hidden"}
+      >
+        <LinkOverlay href={`https://projects.colegaw.in/${id}`} isExternal>
+          <picture>
+            <source srcSet={`/img/projects/${id}.webp`} type="image/webp" />
+            <source srcSet={`/img/projects/${id}.png`} type="image/png" />
+            <img src={`/img/projects/${id}.png`} alt={id} />
+          </picture>
+        </LinkOverlay>
+      </AspectRatio>
+    </LinkBox>
+  </Tooltip>
 );
 
 export const ProjectsSlides = () => {
@@ -55,13 +59,11 @@ export const ProjectsSlides = () => {
             disableOnInteraction: true,
           }}
         >
-          {["well-app", "lightning-share", "visualizing-runtimes", "tandc-treats", "dhs-schedule", "aspect-hub"].map(
-            id => (
-              <SwiperSlide key={id}>
-                <_Slide id={id} />
-              </SwiperSlide>
-            )
-          )}
+          {Object.entries(projectsData).map(([id, title]) => (
+            <SwiperSlide key={id}>
+              <_Slide id={id} title={title} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       )}
       <style jsx>{`
