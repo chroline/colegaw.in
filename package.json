@@ -1,0 +1,36 @@
+{
+  "name": "with-chakra-ui-typescript",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "export": "yarn build && next export",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^1.0.5",
+    "@chakra-ui/react": "^1.4.2",
+    "@chakra-ui/theme-tools": "1.1.2",
+    "@emotion/react": "11.1.5",
+    "@emotion/styled": "11.1.5",
+    "@types/nprogress": "^0.2.0",
+    "framer-motion": "^4.0.3",
+    "next": "latest",
+    "nprogress": "^0.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-use": "^17.3.1",
+    "swiper": "^7.2.0"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^2.0.2",
+    "@types/node": "^14.6.0",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "prettier": "latest",
+    "typescript": "latest"
+  },
+  "license": "MIT",
+  "packageManager": "yarn@3.1.0"
+}
