@@ -17,7 +17,7 @@ const _Slide: React.FC<{ id: string }> = ({ id }) => (
       overflow={"hidden"}
     >
       <LinkOverlay href={`https://projects.colegaw.in/${id}`} isExternal>
-        <Image src={`/img/projects/${id}.png`} />
+        <Image src={`/img/projects/${id}.png`} alt={id} />
       </LinkOverlay>
     </AspectRatio>
   </LinkBox>
