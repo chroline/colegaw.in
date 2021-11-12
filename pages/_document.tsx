@@ -4,7 +4,7 @@ import NextDocument, { Head, Html, Main, NextScript } from "next/document";
 export default class Document extends NextDocument {
   render() {
     return (
-      <Html>
+      <Html lang={"en"}>
         <Head>
           <script defer data-domain="colegaw.in" src="https://plausible.io/js/plausible.outbound-links.js" />
           <meta charSet="utf-8" />
