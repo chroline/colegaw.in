@@ -32,7 +32,7 @@ export const HeroSlides = () => {
           effect={"cards"}
           grabCursor={true}
           autoplay={{
-            delay: 5000,
+            delay: 2500,
             disableOnInteraction: false,
           }}
         >

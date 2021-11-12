@@ -55,7 +55,7 @@ export const ProjectsSlides = () => {
             dynamicBullets: true,
           }}
           autoplay={{
-            delay: 3000,
+            delay: 4500,
             disableOnInteraction: true,
           }}
         >
