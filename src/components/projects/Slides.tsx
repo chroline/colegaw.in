@@ -1,6 +1,6 @@
 import React from "react";
 
-import { AspectRatio, Box, Image, LinkBox, LinkOverlay, useBreakpointValue } from "@chakra-ui/react";
+import { AspectRatio, Box, LinkBox, LinkOverlay, useBreakpointValue } from "@chakra-ui/react";
 import { useWindowSize } from "react-use";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,7 +17,11 @@ const _Slide: React.FC<{ id: string }> = ({ id }) => (
       overflow={"hidden"}
     >
       <LinkOverlay href={`https://projects.colegaw.in/${id}`} isExternal>
-        <Image src={`/img/projects/${id}.png`} alt={id} />
+        <picture>
+          <source srcSet={`/img/projects/${id}.webp`} type="image/webp" />
+          <source srcSet={`/img/projects/${id}.png`} type="image/png" />
+          <img src={`/img/projects/${id}.png`} alt={id} />
+        </picture>
       </LinkOverlay>
     </AspectRatio>
   </LinkBox>
