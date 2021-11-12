@@ -1,13 +1,11 @@
 import React from "react";
 
 import { AspectRatio, Box, LinkBox, LinkOverlay, useBreakpointValue } from "@chakra-ui/react";
-import { useWindowSize } from "react-use";
+import { useAsync, useWindowSize } from "react-use";
 import SwiperCore, { Pagination, Mousewheel } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-SwiperCore.use([Pagination, Mousewheel]);
 
 const _Slide: React.FC<{ id: string }> = ({ id }) => (
   <LinkBox>
@@ -33,35 +31,39 @@ const _Slide: React.FC<{ id: string }> = ({ id }) => (
 
 export const ProjectsSlides = () => {
   const { width } = useWindowSize();
-  const shouldLoop = useBreakpointValue({ base: true, "2xl": false });
+  const shouldLoop = useBreakpointValue({ base: true, "2xl": false }, "sm");
+
+  const init = useAsync(async () => SwiperCore.use([Pagination, Mousewheel]));
 
   return (
     <Box className={"projects-slides"} w={"full"}>
-      <Swiper
-        key={width}
-        loop={shouldLoop}
-        slidesPerView={"auto"}
-        centeredSlides={true}
-        spaceBetween={30}
-        grabCursor={true}
-        mousewheel={true}
-        pagination={{
-          clickable: true,
-          dynamicBullets: true,
-        }}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: true,
-        }}
-      >
-        {["well-app", "lightning-share", "visualizing-runtimes", "tandc-treats", "dhs-schedule", "aspect-hub"].map(
-          id => (
-            <SwiperSlide key={id}>
-              <_Slide id={id} />
-            </SwiperSlide>
-          )
-        )}
-      </Swiper>
+      {!init.loading && (
+        <Swiper
+          key={width}
+          loop={shouldLoop}
+          slidesPerView={"auto"}
+          centeredSlides={true}
+          spaceBetween={30}
+          grabCursor={true}
+          mousewheel={true}
+          pagination={{
+            clickable: true,
+            dynamicBullets: true,
+          }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: true,
+          }}
+        >
+          {["well-app", "lightning-share", "visualizing-runtimes", "tandc-treats", "dhs-schedule", "aspect-hub"].map(
+            id => (
+              <SwiperSlide key={id}>
+                <_Slide id={id} />
+              </SwiperSlide>
+            )
+          )}
+        </Swiper>
+      )}
       <style jsx>{`
         :global(.projects-slides .swiper) {
           overflow: visible;
