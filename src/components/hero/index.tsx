@@ -13,7 +13,7 @@ import { HeroTitle } from "./Title";
 const HeroSlides = dynamic(async () => (await import("./Slides")).HeroSlides);
 
 export const Hero = () => {
-  const showSocialsAboveSlides = useBreakpointValue({ base: false, lg: true });
+  const showSocialsAboveSlides = useBreakpointValue({ base: false, lg: true }, "xl");
 
   return (
     <Flex direction={"row"} justify={"center"} pos={"relative"} w={"full"}>
