@@ -2,8 +2,12 @@ import React from "react";
 
 import { AspectRatio, Box, LinkBox, LinkOverlay, useBreakpointValue } from "@chakra-ui/react";
 import { useWindowSize } from "react-use";
+import SwiperCore, { Pagination, Mousewheel } from "swiper";
+import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
+
+SwiperCore.use([Pagination, Mousewheel]);
 
 const _Slide: React.FC<{ id: string }> = ({ id }) => (
   <LinkBox>

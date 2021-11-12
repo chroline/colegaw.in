@@ -1,9 +1,10 @@
 import React from "react";
 
 import { Button, Heading, LinkBox, LinkOverlay, Stack, Text, VStack } from "@chakra-ui/react";
+import dynamic from "next/dynamic";
 import { HiExternalLink } from "react-icons/hi";
 
-import { ProjectsSlides } from "./Slides";
+const ProjectsSlides = dynamic(async () => (await import("./Slides")).ProjectsSlides);
 
 export const Projects = () => {
   return (

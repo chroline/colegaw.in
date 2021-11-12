@@ -3,15 +3,11 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import { Router } from "next/router";
 import NProgress from "nprogress";
-import SwiperCore, { Autoplay, EffectCards, Mousewheel, Pagination } from "swiper";
-import "swiper/css";
 
 import "../src/util/base.css";
 import "../src/util/nprogress.css";
 import theme from "../src/util/theme";
 import "../src/vendor/Inter Web/inter.css";
-
-SwiperCore.use([EffectCards, Autoplay, Mousewheel, Pagination]);
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());

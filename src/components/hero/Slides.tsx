@@ -2,12 +2,16 @@ import React from "react";
 
 import { Box } from "@chakra-ui/react";
 import Image from "next/image";
+import SwiperCore, { Autoplay, EffectCards } from "swiper";
+import "swiper/css";
 import "swiper/css/effect-cards";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import Image1 from "../../../public/img/me1.png";
 import Image2 from "../../../public/img/me2.png";
 import Image3 from "../../../public/img/me3.png";
+
+SwiperCore.use([EffectCards, Autoplay]);
 
 const _ImageWrapper: React.FC = ({ children }) => (
   <Box
