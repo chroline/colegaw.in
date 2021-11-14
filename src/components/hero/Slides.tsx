@@ -38,17 +38,17 @@ export const HeroSlides = () => {
         >
           <SwiperSlide>
             <_ImageWrapper>
-              <Image src={Image1} alt={"Cole at the beach"} />
+              <Image src={Image1} alt={"Cole at the beach"} priority />
             </_ImageWrapper>
           </SwiperSlide>
           <SwiperSlide>
             <_ImageWrapper>
-              <Image src={Image2} alt={"Cole eating a poké bowl"} />
+              <Image src={Image2} alt={"Cole eating a poké bowl"} priority />
             </_ImageWrapper>
           </SwiperSlide>
           <SwiperSlide>
             <_ImageWrapper>
-              <Image src={Image3} alt={"Cole looking professional"} />
+              <Image src={Image3} alt={"Cole looking professional"} priority />
             </_ImageWrapper>
           </SwiperSlide>
         </Swiper>
