@@ -1,5 +1,5 @@
 {
-  "name": "with-chakra-ui-typescript",
+  "name": "colegaw.in",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
@@ -14,11 +14,10 @@
     "@emotion/react": "11.1.5",
     "@emotion/styled": "11.1.5",
     "@mdx-js/loader": "^1.6.22",
+    "@next/bundle-analyzer": "^12.0.3",
     "@types/nprogress": "^0.2.0",
     "framer-motion": "^4.0.3",
-    "gray-matter": "^4.0.3",
     "next": "latest",
-    "next-mdx-remote": "^3.0.8",
     "next-seo": "^4.28.1",
     "nprogress": "^0.2.0",
     "react": "^18.0.0-alpha-cb11155c8-20211112",
