@@ -16,6 +16,7 @@ const _ImageWrapper: React.FC = ({ children }) => (
   <Box
     w={"full"}
     h={"full"}
+    bg={"blue.500"}
     sx={{ "> span": { height: "100% !important" }, img: { objectFit: "cover", objectPosition: "center" } }}
   >
     {children}
