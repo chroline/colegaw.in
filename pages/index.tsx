@@ -4,8 +4,6 @@ import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 
-import { About } from "~/components/about";
-
 const Hero = dynamic(async () => (await import("~/components/hero")).Hero);
 const About = dynamic(async () => (await import("~/components/about")).About);
 const BrandgineerInfo = dynamic(async () => (await import("~/components/brandgineer-info")).BrandgineerInfo);
