@@ -3,9 +3,9 @@ import { VStack } from "@chakra-ui/react";
 import _AboutContent from "../../../data/aboutContent.mdx";
 
 const styles = {
-  "*": { w: "full", color: "gray.500", fontSize: "lg" },
+  "> *": { w: "full", color: "gray.500", fontSize: "lg" },
   p: {
-    "&:nth-child(1)": { fontSize: "xl" },
+    "&:nth-of-type(1)": { fontSize: "xl" },
   },
   "ul,ol": {
     pl: 6,
@@ -16,7 +16,7 @@ const styles = {
     counterIncrement: "section",
     mt: 6,
     pl: 3,
-    "&:nth-child(1)": {
+    "&:nth-of-type(1)": {
       mt: 0,
     },
   },
