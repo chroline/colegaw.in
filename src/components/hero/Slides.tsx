@@ -70,6 +70,7 @@ export const HeroSlides = () => {
           overflow: hidden;
           width: 100% !important;
           height: 100% !important;
+          box-shadow: var(--chakra-shadows-md);
         }
       `}</style>
     </Box>
