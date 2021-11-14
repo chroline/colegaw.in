@@ -18,6 +18,8 @@ const _ImageWrapper: React.FC = ({ children }) => (
     h={"full"}
     bg={"blue.500"}
     sx={{ "> span": { height: "100% !important" }, img: { objectFit: "cover", objectPosition: "center" } }}
+    borderRadius={"18px"}
+    overflow={"hidden"}
   >
     {children}
   </Box>
@@ -28,7 +30,7 @@ export const HeroSlides = () => {
 
   return (
     <Box className={"hero-slides"} w={{ base: "2xs", sm: "xs" }} h={{ base: "sm", sm: "md" }}>
-      {!init.loading && (
+      {!init.loading ? (
         <Swiper
           effect={"cards"}
           grabCursor={true}
@@ -53,6 +55,10 @@ export const HeroSlides = () => {
             </_ImageWrapper>
           </SwiperSlide>
         </Swiper>
+      ) : (
+        <_ImageWrapper>
+          <Image src={Image1} alt={"Cole at the beach"} priority />
+        </_ImageWrapper>
       )}
       <style jsx>{`
         :global(.hero-slides .swiper) {
@@ -62,14 +68,8 @@ export const HeroSlides = () => {
         }
 
         :global(.hero-slides .swiper-slide) {
-          display: flex;
-          align-items: center;
-          justify-content: center;
           border-radius: 18px;
-          font-size: 22px;
-          font-weight: bold;
-          color: #fff;
-
+          overflow: hidden;
           width: 100% !important;
           height: 100% !important;
         }
