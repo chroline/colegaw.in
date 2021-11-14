@@ -4,6 +4,8 @@ import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 
+import { About } from "~/components/about";
+
 const Hero = dynamic(async () => (await import("~/components/hero")).Hero);
 const BrandgineerInfo = dynamic(async () => (await import("~/components/brandgineer-info")).BrandgineerInfo);
 const Footer = dynamic(async () => (await import("~/components/footer")).Footer);
@@ -37,6 +39,9 @@ const Index = () => {
         <Hero />
       </Section>
       <Section background={"gray.50"} borderColor={"gray.200"}>
+        <About />
+      </Section>
+      <Section background={"blueGray.100"} borderColor={"blueGray.300"}>
         <BrandgineerInfo />
       </Section>
       <Section
