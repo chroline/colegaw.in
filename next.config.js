@@ -1,8 +1,4 @@
 module.exports = {
-  /*experimental: {
-    concurrentFeatures: true,
-    serverComponents: true,
-  },*/
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.mdx/,
