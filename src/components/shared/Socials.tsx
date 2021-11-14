@@ -3,13 +3,13 @@ import React from "react";
 import { HStack, Link, Stack, Tooltip } from "@chakra-ui/react";
 import {
   RiAtFill,
-  RiFacebookFill,
   RiGithubFill,
   RiGitlabFill,
   RiInstagramFill,
   RiLinkedinBoxFill,
   RiTwitterFill,
 } from "react-icons/ri";
+import { SiBuymeacoffee } from "react-icons/si";
 
 const _HeroSocialIcon: React.FC<{ label: string; color: string; href: string }> = ({
   label,
@@ -39,13 +39,6 @@ export const Socials = () => {
           <RiGithubFill size={"100%"} />
         </_HeroSocialIcon>
         <_HeroSocialIcon
-          label={"Facebook: my personal life 👀"}
-          color={"indigo.600"}
-          href={"https://facebook.com/colegawin"}
-        >
-          <RiFacebookFill size={"100%"} />
-        </_HeroSocialIcon>
-        <_HeroSocialIcon
           label={"Instagram: my picturesque life 📸"}
           color={"rose.600"}
           href={"https://instagram.com/colegawin"}
@@ -65,6 +58,9 @@ export const Socials = () => {
           href={"https://twitter.com/colegawin_"}
         >
           <RiTwitterFill size={"100%"} />
+        </_HeroSocialIcon>
+        <_HeroSocialIcon label={"Buy me a... cookie!"} color={"yellow.500"} href={"https://buymeacoffee.com/colegawin"}>
+          <SiBuymeacoffee size={"100%"} />
         </_HeroSocialIcon>
         <_HeroSocialIcon label={"Send me an email!"} color={"teal.600"} href={"mailto:hi@colegaw.in"}>
           <RiAtFill size={"100%"} />
