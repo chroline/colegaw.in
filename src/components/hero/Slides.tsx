@@ -4,8 +4,6 @@ import { Box } from "@chakra-ui/react";
 import Image from "next/image";
 import { useAsync } from "react-use";
 import SwiperCore, { Autoplay, EffectCards } from "swiper";
-import "swiper/css";
-import "swiper/css/effect-cards";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import Image1 from "../../../public/img/me1.png";
@@ -16,7 +14,10 @@ const _ImageWrapper: React.FC = ({ children }) => (
   <Box
     w={"full"}
     h={"full"}
+    bg={"blue.500"}
     sx={{ "> span": { height: "100% !important" }, img: { objectFit: "cover", objectPosition: "center" } }}
+    borderRadius={"18px"}
+    overflow={"hidden"}
   >
     {children}
   </Box>
@@ -27,7 +28,7 @@ export const HeroSlides = () => {
 
   return (
     <Box className={"hero-slides"} w={{ base: "2xs", sm: "xs" }} h={{ base: "sm", sm: "md" }}>
-      {!init.loading && (
+      {!init.loading ? (
         <Swiper
           effect={"cards"}
           grabCursor={true}
@@ -38,20 +39,24 @@ export const HeroSlides = () => {
         >
           <SwiperSlide>
             <_ImageWrapper>
-              <Image src={Image1} alt={"Cole at the beach"} />
+              <Image src={Image1} alt={"Cole at the beach"} priority />
             </_ImageWrapper>
           </SwiperSlide>
           <SwiperSlide>
             <_ImageWrapper>
-              <Image src={Image2} alt={"Cole eating a poké bowl"} />
+              <Image src={Image2} alt={"Cole eating a poké bowl"} priority />
             </_ImageWrapper>
           </SwiperSlide>
           <SwiperSlide>
             <_ImageWrapper>
-              <Image src={Image3} alt={"Cole looking professional"} />
+              <Image src={Image3} alt={"Cole looking professional"} priority />
             </_ImageWrapper>
           </SwiperSlide>
         </Swiper>
+      ) : (
+        <_ImageWrapper>
+          <Image src={Image1} alt={"Cole at the beach"} priority />
+        </_ImageWrapper>
       )}
       <style jsx>{`
         :global(.hero-slides .swiper) {
@@ -61,16 +66,11 @@ export const HeroSlides = () => {
         }
 
         :global(.hero-slides .swiper-slide) {
-          display: flex;
-          align-items: center;
-          justify-content: center;
           border-radius: 18px;
-          font-size: 22px;
-          font-weight: bold;
-          color: #fff;
-
+          overflow: hidden;
           width: 100% !important;
           height: 100% !important;
+          box-shadow: var(--chakra-shadows-md);
         }
       `}</style>
     </Box>

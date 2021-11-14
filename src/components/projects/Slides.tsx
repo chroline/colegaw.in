@@ -3,8 +3,6 @@ import React from "react";
 import { AspectRatio, Box, LinkBox, LinkOverlay, Tooltip, useBreakpointValue } from "@chakra-ui/react";
 import { useAsync, useWindowSize } from "react-use";
 import SwiperCore, { Pagination, Mousewheel } from "swiper";
-import "swiper/css";
-import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import projectsData from "../../../data/projects.json";

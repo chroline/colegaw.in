@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Box, Flex, HStack, Stack, Text, useBreakpointValue, VStack } from "@chakra-ui/react";
-import dynamic from "next/dynamic";
 
 import { Logo } from "../shared/Logo";
 import { Socials } from "../shared/Socials";
@@ -9,8 +8,7 @@ import { HeroBlogCTA } from "./BlogCTA";
 import { HeroDecoration } from "./Decoration";
 import { HeroSubtitles } from "./Subtitles";
 import { HeroTitle } from "./Title";
-
-const HeroSlides = dynamic(async () => (await import("./Slides")).HeroSlides);
+import { HeroSlides } from "~/components/hero/Slides";
 
 export const Hero = () => {
   const showSocialsAboveSlides = useBreakpointValue({ base: false, lg: true }, "xl");

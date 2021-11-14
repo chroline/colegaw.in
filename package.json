@@ -18,10 +18,13 @@
     "@types/nprogress": "^0.2.0",
     "framer-motion": "^4.0.3",
     "next": "latest",
+    "next-plugin-preact": "^3.0.6",
     "next-seo": "^4.28.1",
     "nprogress": "^0.2.0",
-    "react": "^18.0.0-alpha-cb11155c8-20211112",
-    "react-dom": "^18.0.0-alpha-cb11155c8-20211112",
+    "preact": "^10.5.15",
+    "preact-render-to-string": "^5.1.19",
+    "react": "npm:@preact/compat",
+    "react-dom": "npm:@preact/compat",
     "react-icons": "^4.2.0",
     "react-use": "^17.3.1",
     "swiper": "^7.2.0"
@@ -34,6 +37,5 @@
     "prettier": "latest",
     "typescript": "latest"
   },
-  "license": "MIT",
-  "packageManager": "yarn@3.1.0"
+  "license": "MIT"
 }
