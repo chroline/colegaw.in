@@ -3,6 +3,8 @@ import React from "react";
 import { Badge, Box, Flex, Stack, Text } from "@chakra-ui/react";
 import { HiChevronRight } from "react-icons/hi";
 
+import blogPost from "../../../data/blogPost.json";
+
 export const HeroBlogCTA = () => (
   <Box as={"a"} href={"https://blog.colegaw.in"} target={"_blank"} w={"full"}>
     <Stack direction={{ base: "column", md: "row" }} justify={"start"} w={"full"} spacing={4} isTruncated>
@@ -13,7 +15,7 @@ export const HeroBlogCTA = () => (
       </Box>
       <Flex overflow={"hidden"} align={"center"}>
         <Text color={"orange.500"} fontWeight={"semibold"} isTruncated>
-          Why the New Firebase Web v9 Modular SDK is a Game-Changer
+          {blogPost}
         </Text>
         <Text
           as={"span"}
