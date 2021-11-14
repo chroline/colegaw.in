@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box, Flex, HStack, Stack, Text, useBreakpointValue, VStack } from "@chakra-ui/react";
+import { Box, Flex, Stack, useBreakpointValue, VStack } from "@chakra-ui/react";
 
 import { Logo } from "../shared/Logo";
 import { Socials } from "../shared/Socials";
@@ -11,10 +11,10 @@ import { HeroTitle } from "./Title";
 import { HeroSlides } from "~/components/hero/Slides";
 
 export const Hero = () => {
-  const showSocialsAboveSlides = useBreakpointValue({ base: false, lg: true }, "xl");
+  const isLG = useBreakpointValue({ base: false, lg: true }, "xl");
 
   return (
-    <Flex direction={"row"} justify={"center"} pos={"relative"} w={"full"}>
+    <Flex direction={"row"} justify={"center"} pos={"relative"} w={"full"} py={{ base: 0, md: 8 }}>
       <Stack
         direction={{ base: "column", lg: "row" }}
         spacing={{ base: 0, lg: 16, xl: 32 }}
@@ -31,28 +31,24 @@ export const Hero = () => {
           p={12}
           px={6}
         >
-          <HStack alignSelf={{ base: "center", lg: "unset" }} py={{ base: 8, sm: 0 }} spacing={6}>
-            <Logo size={{ base: 20, sm: 24, md: 28 }} />
-            {!showSocialsAboveSlides && (
-              <Text fontSize={{ base: "3xl" }} fontWeight={"bold"} color={"black"} lineHeight={"shorter"}>
-                Cole
-                <br />
-                Gawin
-              </Text>
-            )}
-          </HStack>
-          <VStack spacing={6} w={"full"}>
+          {isLG && (
+            <Box py={{ base: 8, sm: 0 }}>
+              <Logo size={{ base: 20, sm: 24, md: 28 }} />
+            </Box>
+          )}
+          <VStack spacing={6} w={"full"} pt={isLG ? 0 : 12}>
             <VStack spacing={6} w={"full"}>
-              <HeroBlogCTA />
+              {!isLG && <HeroBlogCTA />}
               <HeroTitle />
               <HeroSubtitles />
+              {isLG && <HeroBlogCTA />}
             </VStack>
             {/* <HeroMailingListCTA /> */}
-            {showSocialsAboveSlides && <Socials />}
+            {isLG && <Socials />}
           </VStack>
         </VStack>
         <HeroSlides />
-        {!showSocialsAboveSlides && (
+        {!isLG && (
           <Box py={12}>
             <Socials />
           </Box>
