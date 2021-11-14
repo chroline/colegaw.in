@@ -8,7 +8,7 @@ import { HighlightText } from "../shared/HighlightText";
 export const BrandgineerInfo = () => (
   <Stack
     direction={{ base: "column", md: "row" }}
-    justify={"space-around"}
+    justify={"space-between"}
     align={{ base: "stretch", md: "center" }}
     py={24}
     px={6}

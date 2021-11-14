@@ -31,7 +31,7 @@ export const Hero = () => {
           pos={"relative"}
           zIndex={1}
           p={12}
-          px={{ base: 6, sm: 12 }}
+          px={6}
         >
           <HStack alignSelf={{ base: "center", lg: "unset" }} py={{ base: 8, sm: 0 }} spacing={6}>
             <Logo size={{ base: 20, sm: 24, md: 28 }} />
