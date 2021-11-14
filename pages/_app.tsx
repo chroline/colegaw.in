@@ -7,6 +7,10 @@ import NProgress from "nprogress";
 import "~/util/base.css";
 import "~/util/nprogress.css";
 import "~/vendor/Inter Web/inter.css";
+import "~/vendor/swiper/effect-cards.min.css";
+import "~/vendor/swiper/effect-cards.min.css";
+import "~/vendor/swiper/pagination.min.css";
+import "~/vendor/swiper/swiper.min.css";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());

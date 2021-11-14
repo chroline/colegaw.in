@@ -4,8 +4,6 @@ import { Box } from "@chakra-ui/react";
 import Image from "next/image";
 import { useAsync } from "react-use";
 import SwiperCore, { Autoplay, EffectCards } from "swiper";
-import "swiper/css";
-import "swiper/css/effect-cards";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import Image1 from "../../../public/img/me1.png";
