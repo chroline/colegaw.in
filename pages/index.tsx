@@ -7,6 +7,7 @@ import Head from "next/head";
 import { About } from "~/components/about";
 
 const Hero = dynamic(async () => (await import("~/components/hero")).Hero);
+const About = dynamic(async () => (await import("~/components/about")).About);
 const BrandgineerInfo = dynamic(async () => (await import("~/components/brandgineer-info")).BrandgineerInfo);
 const Footer = dynamic(async () => (await import("~/components/footer")).Footer);
 const Projects = dynamic(async () => (await import("~/components/projects")).Projects);
