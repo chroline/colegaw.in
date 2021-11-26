@@ -11,7 +11,7 @@ import { HeroTitle } from "./Title";
 import { HeroSlides } from "~/components/hero/Slides";
 
 export const Hero = () => {
-  const isLG = useBreakpointValue({ base: false, lg: true }, "xl");
+  const isLG = useBreakpointValue({ base: false, lg: true }, "base");
 
   return (
     <Flex direction={"row"} justify={"center"} pos={"relative"} w={"full"} py={{ base: 0, md: 8 }}>
@@ -32,29 +32,41 @@ export const Hero = () => {
           px={6}
         >
           {isLG && (
-            <Box py={{ base: 8, sm: 0 }}>
-              <Logo size={{ base: 20, sm: 24, md: 28 }} />
+            <Box display={{ base: "none", lg: "block" }}>
+              <Logo size={28} />
             </Box>
           )}
           <VStack spacing={6} w={"full"} pt={isLG ? 0 : 12}>
             <VStack spacing={6} w={"full"}>
-              {!isLG && <HeroBlogCTA />}
+              {!isLG && (
+                <Box w={"full"} display={{ base: "block", lg: "none" }}>
+                  <HeroBlogCTA />
+                </Box>
+              )}
               <HeroTitle />
               <HeroSubtitles />
-              {isLG && <HeroBlogCTA />}
+              {isLG && (
+                <Box w={"full"} display={{ base: "none", lg: "block" }}>
+                  <HeroBlogCTA />
+                </Box>
+              )}
             </VStack>
             {/* <HeroMailingListCTA /> */}
-            {isLG && <Socials />}
+            {isLG && (
+              <Box display={{ base: "none", lg: "block" }}>
+                <Socials />
+              </Box>
+            )}
           </VStack>
         </VStack>
         <HeroSlides />
         {!isLG && (
-          <Box py={12}>
+          <Box py={12} display={{ base: "block", lg: "none" }}>
             <Socials />
           </Box>
         )}
       </Stack>
-      <HeroDecoration />
+      {isLG && <HeroDecoration />}
     </Flex>
   );
 };
