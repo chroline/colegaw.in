@@ -1,8 +1,7 @@
 import React from "react";
 
 import { Flex } from "@chakra-ui/layout";
-import { Box, IconButton, Menu, MenuButton, useBreakpointValue } from "@chakra-ui/react";
-import { HiOutlineMenu } from "react-icons/hi";
+import { Box, useBreakpointValue } from "@chakra-ui/react";
 import { useWindowScroll } from "react-use";
 
 import { NavbarButtons } from "~/components/navbar/Buttons";
@@ -10,7 +9,7 @@ import { NavbarLinks } from "~/components/navbar/Links";
 import { NameLogo } from "~/components/shared/NameLogo";
 
 export const Navbar = () => {
-  const isLG = useBreakpointValue({ base: false, lg: true });
+  const isLG = useBreakpointValue({ base: false, lg: true }, "base");
   const { y: scroll } = useWindowScroll();
 
   return (
@@ -29,16 +28,7 @@ export const Navbar = () => {
       <Flex maxW={"7xl"} w={"full"} align={"center"} justify={"space-between"}>
         {!isLG && (
           <Box>
-            <Menu>
-              <MenuButton
-                as={IconButton}
-                icon={<HiOutlineMenu size={"1.5rem"} />}
-                color={"gray.500"}
-                variant="ghost"
-                aria-label={"menu"}
-              />
-              <NavbarLinks />
-            </Menu>
+            <NavbarLinks />
           </Box>
         )}
         <Box
