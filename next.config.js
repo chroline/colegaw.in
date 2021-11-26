@@ -14,4 +14,7 @@ module.exports = withPreact({
 
     return config;
   },
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
 });

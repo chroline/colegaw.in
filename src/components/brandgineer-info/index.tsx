@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box, Button, Heading, Stack, Text, Tooltip, VStack } from "@chakra-ui/react";
+import { Button, Heading, LinkBox, LinkOverlay, Stack, Text, VStack } from "@chakra-ui/react";
 import { HiArrowRight } from "react-icons/hi";
 
 import { HighlightText } from "../shared/HighlightText";
@@ -31,10 +31,17 @@ export const BrandgineerInfo = () => (
         "?
       </Heading>
     </VStack>
-    <Tooltip label={"Coming soon!"}>
-      <Button as={Box} size={"lg"} colorScheme={"orange"} rightIcon={<HiArrowRight />} disabled>
+    <Button
+      as={LinkBox}
+      size={"lg"}
+      colorScheme={"orange"}
+      shadow={"base"}
+      sx={{ "&:hover": { shadow: "md" } }}
+      rightIcon={<HiArrowRight />}
+    >
+      <LinkOverlay href={"https://by.colegaw.in/brandgineering"} isExternal>
         Read more
-      </Button>
-    </Tooltip>
+      </LinkOverlay>
+    </Button>
   </Stack>
 );

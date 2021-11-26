@@ -30,7 +30,7 @@ export const Projects = () => {
           size={"lg"}
           colorScheme={"gray"}
           shadow={"base"}
-          _hover={{ shadow: "md" }}
+          sx={{ ":hover": { shadow: "md" } }}
           rightIcon={<HiExternalLink />}
         >
           <LinkOverlay href={"https://projects.colegaw.in"} isExternal>
