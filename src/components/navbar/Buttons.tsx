@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Button, HStack, LinkBox, LinkOverlay } from "@chakra-ui/react";
-import { HiExternalLink } from "react-icons/hi";
+import { HiBookOpen, HiViewGrid } from "react-icons/hi";
 
 export const NavbarButtons = () => (
   <HStack>
@@ -16,7 +16,7 @@ export const NavbarButtons = () => (
         background: "gray.100",
       }}
       _active={{ borderColor: "gray.200" }}
-      rightIcon={<HiExternalLink />}
+      rightIcon={<HiViewGrid />}
     >
       <LinkOverlay href={"https://projects.colegaw.in"} isExternal>
         Portfolio
@@ -33,7 +33,8 @@ export const NavbarButtons = () => (
         background: "gray.100",
       }}
       _active={{ borderColor: "gray.200" }}
-      rightIcon={<HiExternalLink />}
+      rightIcon={<HiBookOpen />}
+      display={{ base: "none", lg: "flex" }}
     >
       <LinkOverlay href={"https://blog.colegaw.in"} isExternal>
         Read my blog
