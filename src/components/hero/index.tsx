@@ -10,7 +10,7 @@ import { HeroSubtitles } from "./Subtitles";
 import { HeroTitle } from "./Title";
 import { HeroSlides } from "~/components/hero/Slides";
 
-export const Hero = () => {
+export default function () {
   const isLG = useBreakpointValue({ base: false, lg: true }, "xl");
 
   return (
@@ -57,4 +57,4 @@ export const Hero = () => {
       <HeroDecoration />
     </Flex>
   );
-};
+}

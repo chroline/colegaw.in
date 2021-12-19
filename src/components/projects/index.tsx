@@ -6,7 +6,7 @@ import { HiExternalLink } from "react-icons/hi";
 
 const ProjectsSlides = dynamic(async () => (await import("./Slides")).ProjectsSlides);
 
-export const Projects = () => {
+export default function () {
   return (
     <VStack justify={"space-around"} align={"center"} spacing={12} py={24} w={"full"}>
       <Stack
@@ -41,4 +41,4 @@ export const Projects = () => {
       <ProjectsSlides />
     </VStack>
   );
-};
+}
