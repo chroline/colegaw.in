@@ -5,7 +5,7 @@ import { HiArrowRight } from "react-icons/hi";
 
 import { HighlightText } from "../shared/HighlightText";
 
-export default function () {
+export default function BrandgineerInfo() {
   return (
     <Stack
       direction={{ base: "column", md: "row" }}
