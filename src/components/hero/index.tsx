@@ -2,16 +2,19 @@ import React from "react";
 
 import { Box, Flex, Stack, useBreakpointValue, VStack } from "@chakra-ui/react";
 
+import { CheckOutMyLynk } from "../shared/CheckOutMyLynk";
 import { Logo } from "../shared/Logo";
-import { Socials } from "../shared/Socials";
 import { HeroBlogCTA } from "./BlogCTA";
 import { HeroDecoration } from "./Decoration";
 import { HeroSubtitles } from "./Subtitles";
 import { HeroTitle } from "./Title";
 import { HeroSlides } from "~/components/hero/Slides";
+import useIsLoading from "~/util/useIsLoading";
 
-export const Hero = () => {
-  const isLG = useBreakpointValue({ base: false, lg: true }, "xl");
+export default function Hero() {
+  const isLG = useBreakpointValue({ base: false, lg: true });
+
+  const isLoading = useIsLoading();
 
   return (
     <Flex direction={"row"} justify={"center"} pos={"relative"} w={"full"} py={{ base: 0, md: 8 }}>
@@ -31,30 +34,34 @@ export const Hero = () => {
           p={12}
           px={6}
         >
-          {isLG && (
-            <Box py={{ base: 8, sm: 0 }}>
-              <Logo size={{ base: 20, sm: 24, md: 28 }} />
+          {(isLoading || isLG) && (
+            <Box py={{ base: 8, sm: 0 }} mb={{ base: -12, lg: 0 }}>
+              <Logo size={{ base: 0, lg: 28 }} />
             </Box>
           )}
-          <VStack spacing={6} w={"full"} pt={isLG ? 0 : 12}>
-            <VStack spacing={6} w={"full"}>
-              {!isLG && <HeroBlogCTA />}
-              <HeroTitle />
-              <HeroSubtitles />
-              {isLG && <HeroBlogCTA />}
-            </VStack>
-            {/* <HeroMailingListCTA /> */}
-            {isLG && <Socials />}
+          <VStack spacing={6} w={"full"} pt={{ base: 12, lg: 0 }}>
+            <Stack direction={{ base: "column-reverse", lg: "column" }} spacing={6} w={"full"}>
+              <VStack spacing={6} w={"full"}>
+                <HeroTitle />
+                <HeroSubtitles />
+              </VStack>
+              <HeroBlogCTA />
+            </Stack>
+            {(isLoading || isLG) && (
+              <Box display={{ base: "none", lg: "unset" }}>
+                <CheckOutMyLynk />
+              </Box>
+            )}
           </VStack>
         </VStack>
         <HeroSlides />
-        {!isLG && (
-          <Box py={12}>
-            <Socials />
+        {(isLoading || !isLG) && (
+          <Box py={12} display={{ base: "unset", lg: "none" }}>
+            <CheckOutMyLynk />
           </Box>
         )}
       </Stack>
       <HeroDecoration />
     </Flex>
   );
-};
+}

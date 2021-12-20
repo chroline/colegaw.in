@@ -6,7 +6,7 @@ import { HiExternalLink } from "react-icons/hi";
 
 const ProjectsSlides = dynamic(async () => (await import("./Slides")).ProjectsSlides);
 
-export const Projects = () => {
+export default function Projects() {
   return (
     <VStack justify={"space-around"} align={"center"} spacing={12} py={24} w={"full"}>
       <Stack
@@ -22,7 +22,7 @@ export const Projects = () => {
             Projects
           </Heading>
           <Text fontSize={"lg"} fontWeight={"medium"}>
-            A select list of things I've made and am currently working on.
+            A select list of things I&apos;ve made and am currently working on.
           </Text>
         </VStack>
         <Button
@@ -41,4 +41,4 @@ export const Projects = () => {
       <ProjectsSlides />
     </VStack>
   );
-};
+}

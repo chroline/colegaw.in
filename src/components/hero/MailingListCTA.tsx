@@ -5,7 +5,7 @@ import { VStack, Stack, Input, Text, Tooltip, Box, Button } from "@chakra-ui/rea
 export const HeroMailingListCTA = () => (
   <VStack spacing={2} align={"start"} w={"full"}>
     <Text fontWeight={"medium"} fontSize={{ base: "normal", sm: "lg" }}>
-      Interested in hearing what I'm up to?
+      Interested in hearing what I&apos;m up to?
     </Text>
     <Stack direction={{ base: "column", sm: "row" }} w={"full"}>
       <Input size={"lg"} placeholder={"Email address..."} w={"full"} shadow={"sm"} />
