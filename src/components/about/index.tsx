@@ -14,7 +14,7 @@ export const About = () => (
         fontWeight={"semibold"}
         color={"blue.500"}
       >
-        A little about me
+        A little introduction to Cole
       </Text>
       <AboutTitle />
     </VStack>
