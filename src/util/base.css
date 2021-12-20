@@ -11,5 +11,5 @@ body,
 
 *:not(.chakra-portal *) {
   box-sizing: border-box;
-  transition: all 0.2s ease;
+  transition: all 0.2s ease, transform 0s, margin 0s, padding 0s;
 }
