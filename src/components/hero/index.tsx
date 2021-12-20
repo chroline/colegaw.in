@@ -2,8 +2,8 @@ import React from "react";
 
 import { Box, Flex, Stack, useBreakpointValue, VStack } from "@chakra-ui/react";
 
+import { CheckOutMyLynk } from "../shared/CheckOutMyLynk";
 import { Logo } from "../shared/Logo";
-import { Socials } from "../shared/Socials";
 import { HeroBlogCTA } from "./BlogCTA";
 import { HeroDecoration } from "./Decoration";
 import { HeroSubtitles } from "./Subtitles";
@@ -49,7 +49,7 @@ export default function () {
             </Stack>
             {(isLoading || isLG) && (
               <Box display={{ base: "none", lg: "unset" }}>
-                <Socials />
+                <CheckOutMyLynk />
               </Box>
             )}
           </VStack>
@@ -57,7 +57,7 @@ export default function () {
         <HeroSlides />
         {(isLoading || !isLG) && (
           <Box py={12} display={{ base: "unset", lg: "none" }}>
-            <Socials />
+            <CheckOutMyLynk />
           </Box>
         )}
       </Stack>

@@ -3,12 +3,12 @@ import React from "react";
 import { VStack } from "@chakra-ui/react";
 
 import { FooterCredits } from "~/components/footer/Credits";
-import { Socials } from "~/components/shared/Socials";
+import { CheckOutMyLynk } from "~/components/shared/CheckOutMyLynk";
 
 export default function () {
   return (
     <VStack align={"center"} py={24} px={6}>
-      <Socials />
+      <CheckOutMyLynk />
       <FooterCredits />
     </VStack>
   );
