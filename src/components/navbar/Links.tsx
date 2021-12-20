@@ -1,20 +1,37 @@
 import React from "react";
 
-import { HStack, IconButton, Link, LinkBox, LinkOverlay, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
-import { HiExternalLink, HiOutlineMenu } from "react-icons/hi";
+import {
+  HStack,
+  IconButton,
+  Link,
+  LinkBox,
+  LinkOverlay,
+  Menu,
+  MenuDivider,
+  MenuButton,
+  MenuItem,
+  MenuList,
+} from "@chakra-ui/react";
+import { HiOutlineMenu } from "react-icons/hi";
 
 function _LGNavbarLinks() {
   return (
     <HStack spacing={6} fontSize={"lg"} fontWeight={"medium"} color={"gray.700"}>
-      <Link href={"#"}>About me</Link>
+      {/*<Link href={"#"}>About me</Link>*/}
       <Link href={"https://by.colegaw.in/brandgineering"} isExternal>
         Brand-gineering
       </Link>
-      <Link href={"https://gitlab.com/chroline"} isExternal sx={{ display: "flex", alignItems: "center" }}>
-        Professional work
-        <span style={{ marginLeft: "5px" }}>
+      <Link href={"https://buymeacoffee.com/colegawin"} isExternal sx={{ display: "flex", alignItems: "center" }}>
+        Support me
+        {/*<span style={{ marginLeft: "5px" }}>
           <HiExternalLink />
-        </span>
+        </span>*/}
+      </Link>
+      <Link href={"https://github.com/chroline"} isExternal sx={{ display: "flex", alignItems: "center" }}>
+        Github
+        {/*<span style={{ marginLeft: "5px" }}>
+          <HiExternalLink />
+        </span>*/}
       </Link>
     </HStack>
   );
@@ -31,11 +48,11 @@ function _SMNavbarLinks() {
         aria-label={"menu"}
       />
       <MenuList>
-        <LinkBox>
+        {/*<LinkBox>
           <MenuItem>
             <LinkOverlay>About me</LinkOverlay>
           </MenuItem>
-        </LinkBox>
+        </LinkBox>*/}
         <LinkBox>
           <MenuItem>
             <LinkOverlay href={"https://by.colegaw.in/brandgineering"} isExternal>
@@ -45,31 +62,58 @@ function _SMNavbarLinks() {
         </LinkBox>
         <LinkBox>
           <MenuItem>
-            <LinkOverlay href={"https://gitlab.com/chroline"} isExternal sx={{ display: "flex", alignItems: "center" }}>
-              Professional work
-              <span style={{ marginLeft: "5px" }}>
+            <LinkOverlay
+              href={"https://buymeacoffee.com/colegawin"}
+              isExternal
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              Support me
+              {/*<span style={{ marginLeft: "5px" }}>
                 <HiExternalLink />
-              </span>
-            </LinkOverlay>
-          </MenuItem>
-        </LinkBox>
-        <LinkBox>
-          <MenuItem display={{ base: "unset", sm: "none" }}>
-            <LinkOverlay href={"https://projects.colegaw.in"} isExternal sx={{ display: "flex", alignItems: "center" }}>
-              Portfolio
-              <span style={{ marginLeft: "5px" }}>
-                <HiExternalLink />
-              </span>
+              </span>*/}
             </LinkOverlay>
           </MenuItem>
         </LinkBox>
         <LinkBox>
           <MenuItem>
-            <LinkOverlay href={"https://blog.colegaw.in"} isExternal sx={{ display: "flex", alignItems: "center" }}>
-              Read my blog
-              <span style={{ marginLeft: "5px" }}>
+            <LinkOverlay href={"https://github.com/chroline"} isExternal sx={{ display: "flex", alignItems: "center" }}>
+              Github
+              {/*<span style={{ marginLeft: "5px" }}>
                 <HiExternalLink />
-              </span>
+              </span>*/}
+            </LinkOverlay>
+          </MenuItem>
+        </LinkBox>
+        <MenuDivider />
+        <LinkBox>
+          <MenuItem display={{ base: "unset", sm: "none" }}>
+            <LinkOverlay
+              href={"https://projects.colegaw.in"}
+              isExternal
+              sx={{ display: "flex", alignItems: "center" }}
+              color={"blue.600"}
+              fontWeight={"medium"}
+            >
+              Portfolio
+              {/*<span style={{ marginLeft: "5px" }}>
+                <HiExternalLink />
+              </span>*/}
+            </LinkOverlay>
+          </MenuItem>
+        </LinkBox>
+        <LinkBox>
+          <MenuItem>
+            <LinkOverlay
+              href={"https://blog.colegaw.in"}
+              isExternal
+              sx={{ display: "flex", alignItems: "center" }}
+              color={"amber.600"}
+              fontWeight={"medium"}
+            >
+              Read my blog
+              {/*<span style={{ marginLeft: "5px" }}>
+                <HiExternalLink />
+              </span>*/}
             </LinkOverlay>
           </MenuItem>
         </LinkBox>
