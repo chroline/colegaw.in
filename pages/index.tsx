@@ -6,12 +6,12 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 
 import { Navbar } from "~/components/navbar";
+import { Section } from "~/components/shared/Section";
 
-const Hero = dynamic(async () => (await import("~/components/hero")).Hero);
-const BrandgineerInfo = dynamic(async () => (await import("~/components/brandgineer-info")).BrandgineerInfo);
-const Footer = dynamic(async () => (await import("~/components/footer")).Footer);
-const Projects = dynamic(async () => (await import("~/components/projects")).Projects);
-const Section = dynamic(async () => (await import("~/components/shared/Section")).Section);
+const Hero = dynamic(async () => await import("~/components/hero"));
+const BrandgineerInfo = dynamic(async () => await import("~/components/brandgineer-info"));
+const Projects = dynamic(async () => await import("~/components/projects"));
+const Footer = dynamic(async () => await import("~/components/footer"));
 
 const Index = () => {
   return (

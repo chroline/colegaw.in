@@ -6,7 +6,7 @@ import { HiExternalLink } from "react-icons/hi";
 
 const ProjectsSlides = dynamic(async () => (await import("./Slides")).ProjectsSlides);
 
-export const Projects = () => {
+export default function () {
   return (
     <VStack justify={"space-around"} align={"center"} spacing={12} py={24} w={"full"}>
       <Stack
@@ -30,7 +30,7 @@ export const Projects = () => {
           size={"lg"}
           colorScheme={"gray"}
           shadow={"base"}
-          _hover={{ shadow: "md" }}
+          sx={{ ":hover": { shadow: "md" } }}
           rightIcon={<HiExternalLink />}
         >
           <LinkOverlay href={"https://projects.colegaw.in"} isExternal>
@@ -41,4 +41,4 @@ export const Projects = () => {
       <ProjectsSlides />
     </VStack>
   );
-};
+}

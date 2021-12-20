@@ -14,7 +14,6 @@ const _ImageWrapper: React.FC = ({ children }) => (
   <Box
     w={"full"}
     h={"full"}
-    bg={"blue.500"}
     sx={{ "> span": { height: "100% !important" }, img: { objectFit: "cover", objectPosition: "center" } }}
     borderRadius={"18px"}
     overflow={"hidden"}
@@ -39,17 +38,17 @@ export const HeroSlides = () => {
         >
           <SwiperSlide>
             <_ImageWrapper>
-              <Image src={Image1} alt={"Cole at the beach"} priority />
+              <Image src={Image1} alt={"Cole at the beach"} priority placeholder={"blur"} />
             </_ImageWrapper>
           </SwiperSlide>
           <SwiperSlide>
             <_ImageWrapper>
-              <Image src={Image2} alt={"Cole eating a poké bowl"} priority />
+              <Image src={Image2} alt={"Cole eating a poké bowl"} priority placeholder={"blur"} />
             </_ImageWrapper>
           </SwiperSlide>
           <SwiperSlide>
             <_ImageWrapper>
-              <Image src={Image3} alt={"Cole looking professional"} priority />
+              <Image src={Image3} alt={"Cole looking professional"} priority placeholder={"blur"} />
             </_ImageWrapper>
           </SwiperSlide>
         </Swiper>

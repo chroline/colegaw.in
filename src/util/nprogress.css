@@ -1,9 +1,13 @@
+:root {
+  --nprogress-color: #283371;
+}
+
 #nprogress {
   pointer-events: none;
 }
 
 #nprogress .bar {
-  background: #283371;
+  background: var(--nprogress-color);
   position: fixed;
   z-index: 9999;
   top: 0;
@@ -18,7 +22,7 @@
   right: 0;
   width: 100px;
   height: 100%;
-  box-shadow: 0 0 10px #283371, 0 0 5px #283371;
+  box-shadow: 0 0 10px var(--nprogress-color), 0 0 5px var(--nprogress-color);
   opacity: 1;
   transform: rotate(3deg) translate(0px, -4px);
 }
@@ -36,7 +40,7 @@
   height: 18px;
   box-sizing: border-box;
   border: solid 2px transparent;
-  border-top-color: #fff;
+  border-top-color: var(--nprogress-color);
   border-radius: 50%;
   animation: nprogress-spinner 400ms linear infinite;
 }

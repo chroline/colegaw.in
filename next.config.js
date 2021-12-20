@@ -1,5 +1,7 @@
 const withPreact = require("next-plugin-preact");
 
 module.exports = withPreact({
-  /* regular next.js config options here */
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
 });
