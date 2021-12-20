@@ -11,7 +11,7 @@ import { HeroTitle } from "./Title";
 import { HeroSlides } from "~/components/hero/Slides";
 import useIsLoading from "~/util/useIsLoading";
 
-export const Hero = () => {
+export default function () {
   const isLG = useBreakpointValue({ base: false, lg: true });
 
   const isLoading = useIsLoading();
@@ -64,4 +64,4 @@ export const Hero = () => {
       <HeroDecoration />
     </Flex>
   );
-};
+}
