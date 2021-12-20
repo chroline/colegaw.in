@@ -1,6 +1,7 @@
 import React from "react";
 
 import { AspectRatio, Box, LinkBox, LinkOverlay, Tooltip, useBreakpointValue } from "@chakra-ui/react";
+import NextImage from "next/image";
 import { useAsync, useWindowSize } from "react-use";
 import SwiperCore, { Pagination, Mousewheel } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,16 +16,13 @@ const _Slide: React.FC<{ id: string; title: string }> = ({ id, title }) => (
         ratio={2}
         background={"white"}
         boxShadow={"md"}
-        _hover={{ shadow: "lg", mt: -2 }}
         borderRadius={"lg"}
         overflow={"hidden"}
+        transition={"all 0.2s ease"}
+        _hover={{ shadow: "lg", mt: -2 }}
       >
         <LinkOverlay href={`https://projects.colegaw.in/${id}`} isExternal>
-          <picture>
-            <source srcSet={`/img/projects/${id}.webp`} type="image/webp" />
-            <source srcSet={`/img/projects/${id}.png`} type="image/png" />
-            <img src={`/img/projects/${id}.png`} alt={id} />
-          </picture>
+          <NextImage src={`/img/projects/${id}.webp`} alt={title} layout={"fill"} />
         </LinkOverlay>
       </AspectRatio>
     </LinkBox>

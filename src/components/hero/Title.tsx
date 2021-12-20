@@ -6,7 +6,7 @@ import { HighlightText } from "../shared/HighlightText";
 
 export const HeroTitle = () => (
   <Heading as={"h1"} fontSize={"4xl"} fontWeight={"extrabold"} color={"black"}>
-    Hey 👋, I'm{" "}
+    Hey 👋, I&apos;m{" "}
     <HighlightText textColor={"blue.500"} highlightColor={"blue.200"}>
       Cole Gawin
     </HighlightText>

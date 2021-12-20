@@ -27,14 +27,14 @@ export default function BrandgineerInfo() {
           More than an engineer — more than a designer.
         </Text>
         <Heading as={"h1"} fontSize={{ base: "3xl", sm: "4xl" }}>
-          What is a "
+          What is a &ldquo;
           <HighlightText textColor={"purple.500"} highlightColor={"purple.200"}>
             brand
           </HighlightText>
           <HighlightText textColor={"green.500"} highlightColor={"green.200"}>
             -gineer
           </HighlightText>
-          "?
+          &rdquo;?
         </Heading>
       </VStack>
       <Button

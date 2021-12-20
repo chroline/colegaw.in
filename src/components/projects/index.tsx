@@ -22,7 +22,7 @@ export default function Projects() {
             Projects
           </Heading>
           <Text fontSize={"lg"} fontWeight={"medium"}>
-            A select list of things I've made and am currently working on.
+            A select list of things I&apos;ve made and am currently working on.
           </Text>
         </VStack>
         <Button
