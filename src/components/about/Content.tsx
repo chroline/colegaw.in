@@ -7,6 +7,9 @@ const styles = {
   p: {
     "&:nth-of-type(1)": { fontSize: "xl" },
   },
+  a: {
+    textDecoration: "underline",
+  },
   "ul,ol": {
     pl: 6,
     counterReset: "section",

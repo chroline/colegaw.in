@@ -17,7 +17,14 @@ export default function Hero() {
   const isLoading = useIsLoading();
 
   return (
-    <Flex direction={"row"} justify={"center"} pos={"relative"} w={"full"} py={{ base: 0, md: 8 }}>
+    <Flex
+      direction={"row"}
+      justify={"center"}
+      pos={"relative"}
+      w={"full"}
+      pt={{ base: 12, md: 20 }}
+      pb={{ base: 0, md: 8 }}
+    >
       <Stack
         direction={{ base: "column", lg: "row" }}
         spacing={{ base: 0, lg: 16, xl: 32 }}
