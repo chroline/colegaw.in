@@ -9,7 +9,7 @@ body,
   overflow: visible;
 }
 
-*:not(.chakra-portal *) {
+*:not(.chakra-portal *):not(.chakra-menu__menu-list) {
   box-sizing: border-box;
   transition: all 0.2s ease, transform 0s, margin 0s, padding 0s;
 }
