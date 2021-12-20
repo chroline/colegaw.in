@@ -1,9 +1,11 @@
 import React from "react";
 
+import { Box } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 
+import { Navbar } from "~/components/navbar";
 import { Section } from "~/components/shared/Section";
 
 const Hero = dynamic(async () => await import("~/components/hero"));
@@ -34,21 +36,24 @@ const Index = () => {
           cardType: "summary_large_image",
         }}
       />
-      <Section>
-        <Hero />
-      </Section>
-      <Section background={"gray.50"} borderColor={"gray.200"}>
-        <BrandgineerInfo />
-      </Section>
-      <Section
-        background={"linear-gradient(135deg, var(--chakra-colors-blue-500), var(--chakra-colors-indigo-500))"}
-        borderColor={"blue.700"}
-      >
-        <Projects />
-      </Section>
-      <Section background={"gray.100"} borderColor={"gray.200"}>
-        <Footer />
-      </Section>
+      <Navbar />
+      <Box pt={12}>
+        <Section>
+          <Hero />
+        </Section>
+        <Section background={"gray.50"} borderColor={"gray.200"}>
+          <BrandgineerInfo />
+        </Section>
+        <Section
+          background={"linear-gradient(135deg, var(--chakra-colors-blue-500), var(--chakra-colors-indigo-500))"}
+          borderColor={"blue.700"}
+        >
+          <Projects />
+        </Section>
+        <Section background={"gray.100"} borderColor={"gray.200"}>
+          <Footer />
+        </Section>
+      </Box>
     </>
   );
 };
