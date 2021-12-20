@@ -18,7 +18,7 @@ const _Slide: React.FC<{ id: string; title: string }> = ({ id, title }) => (
         boxShadow={"md"}
         borderRadius={"lg"}
         overflow={"hidden"}
-        transition={"all 0.2s ease"}
+        transition={"all 0.2s ease !important"}
         _hover={{ shadow: "lg", mt: -2 }}
       >
         <LinkOverlay href={`https://projects.colegaw.in/${id}`} isExternal>
@@ -29,7 +29,7 @@ const _Slide: React.FC<{ id: string; title: string }> = ({ id, title }) => (
   </Tooltip>
 );
 
-export const ProjectsSlides = () => {
+export function ProjectsSlides() {
   const { width } = useWindowSize();
   const shouldLoop = useBreakpointValue({ base: true, "2xl": false }, "sm");
 
@@ -84,4 +84,4 @@ export const ProjectsSlides = () => {
       `}</style>
     </Box>
   );
-};
+}
