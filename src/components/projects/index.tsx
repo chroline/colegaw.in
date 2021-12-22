@@ -2,7 +2,7 @@ import React from "react";
 
 import { Button, Heading, LinkBox, LinkOverlay, Stack, Text, VStack } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
-import { HiExternalLink } from "react-icons/hi";
+import { HiArrowRight } from "react-icons/hi";
 
 const ProjectsSlides = dynamic(async () => (await import("./Slides")).ProjectsSlides);
 
@@ -31,7 +31,7 @@ export default function Projects() {
           colorScheme={"gray"}
           shadow={"base"}
           sx={{ ":hover": { shadow: "md" } }}
-          rightIcon={<HiExternalLink />}
+          rightIcon={<HiArrowRight />}
         >
           <LinkOverlay href={"https://projects.colegaw.in"} isExternal>
             See full portfolio

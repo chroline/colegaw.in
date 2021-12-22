@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Button, Heading, LinkBox, LinkOverlay, Stack, Text, VStack } from "@chakra-ui/react";
-import { HiArrowRight } from "react-icons/hi";
+import { HiExternalLink } from "react-icons/hi";
 
 import { HighlightText } from "../shared/HighlightText";
 
@@ -43,7 +43,7 @@ export default function BrandgineerInfo() {
         colorScheme={"orange"}
         shadow={"base"}
         sx={{ "&:hover": { shadow: "md" } }}
-        rightIcon={<HiArrowRight />}
+        rightIcon={<HiExternalLink />}
       >
         <LinkOverlay href={"https://by.colegaw.in/brandgineering"} isExternal>
           Read more
