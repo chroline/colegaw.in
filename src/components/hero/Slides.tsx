@@ -9,6 +9,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Image1 from "../../../public/img/me1.png";
 import Image2 from "../../../public/img/me2.png";
 import Image3 from "../../../public/img/me3.png";
+import Image4 from "../../../public/img/me4.png";
+import Image5 from "../../../public/img/me5.png";
 
 const _ImageWrapper: React.FC = ({ children }) => (
   <Box
@@ -48,7 +50,18 @@ export const HeroSlides = () => {
           </SwiperSlide>
           <SwiperSlide>
             <_ImageWrapper>
-              <Image src={Image3} alt={"Cole looking professional"} priority placeholder={"blur"} />
+              <Image src={Image3} alt={"Cole getting blown over on the Golden Gate Bridge"} priority placeholder={"blur"} />
+            </_ImageWrapper>
+          </SwiperSlide>
+          <SwiperSlide>
+            <_ImageWrapper>
+              <Image src={Image4} alt={"Cole sitting on a rock overlooking Vancouver"} priority
+                     placeholder={"blur"} />
+            </_ImageWrapper>
+          </SwiperSlide>
+          <SwiperSlide>
+            <_ImageWrapper>
+              <Image src={Image5} alt={"Cole looking professional"} priority placeholder={"blur"} />
             </_ImageWrapper>
           </SwiperSlide>
         </Swiper>
