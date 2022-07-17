@@ -27,7 +27,7 @@ export const NavbarButtons = () => (
       background={"gray.50"}
       border={"1px solid"}
       borderColor={"gray.200"}
-      color={"amber.600"}
+      color={"red.600"}
       _hover={{
         borderColor: "gray.300",
         background: "gray.100",
@@ -36,8 +36,8 @@ export const NavbarButtons = () => (
       rightIcon={<HiBookOpen />}
       display={{ base: "none", lg: "flex" }}
     >
-      <LinkOverlay href={"https://blog.colegaw.in"} isExternal>
-        Read my blog
+      <LinkOverlay href={"https://instructive.dev"} isExternal>
+        Programming blog
       </LinkOverlay>
     </Button>
   </HStack>
