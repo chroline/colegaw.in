@@ -17,21 +17,14 @@ import { HiOutlineMenu } from "react-icons/hi";
 function _LGNavbarLinks() {
   return (
     <HStack spacing={6} fontSize={"lg"} fontWeight={"medium"} color={"gray.700"}>
-      {/*<Link href={"#"}>About me</Link>*/}
       <Link href={"https://by.colegaw.in/brandgineering"} isExternal>
         Brand-gineering
       </Link>
       <Link href={"https://buymeacoffee.com/colegawin"} isExternal sx={{ display: "flex", alignItems: "center" }}>
         Support me
-        {/*<span style={{ marginLeft: "5px" }}>
-          <HiExternalLink />
-        </span>*/}
       </Link>
       <Link href={"https://github.com/chroline"} isExternal sx={{ display: "flex", alignItems: "center" }}>
         Github
-        {/*<span style={{ marginLeft: "5px" }}>
-          <HiExternalLink />
-        </span>*/}
       </Link>
     </HStack>
   );

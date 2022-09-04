@@ -53,6 +53,9 @@ function _SMNavbar() {
 function _LGNavbar() {
   return (
     <_Wrapper display={{ base: "none", md: "flex" }}>
+      <Box display={{ base: "none", sm: "unset" }}>
+        <NavbarButtons />
+      </Box>
       <Box
         position={{ base: "absolute", lg: "unset" }}
         left={{ base: "50%", lg: 0 }}
@@ -61,9 +64,6 @@ function _LGNavbar() {
         <NameLogo size={10} />
       </Box>
       <NavbarLinks.LG />
-      <Box display={{ base: "none", sm: "unset" }}>
-        <NavbarButtons />
-      </Box>
     </_Wrapper>
   );
 }
