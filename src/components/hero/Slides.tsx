@@ -6,7 +6,7 @@ import { useAsync } from "react-use";
 import SwiperCore, { Autoplay, EffectCards } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import Image1 from "../../../public/img/me1.png";
+import Image1 from "../../../public/img/me1.jpg";
 import Image2 from "../../../public/img/me2.png";
 import Image3 from "../../../public/img/me3.png";
 import Image4 from "../../../public/img/me4.png";
