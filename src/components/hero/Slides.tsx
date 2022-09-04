@@ -34,7 +34,7 @@ export const HeroSlides = () => {
           effect={"cards"}
           grabCursor={true}
           autoplay={{
-            delay: 2500,
+            delay: 3500,
             disableOnInteraction: false,
           }}
         >
@@ -55,13 +55,13 @@ export const HeroSlides = () => {
           </SwiperSlide>
           <SwiperSlide>
             <_ImageWrapper>
-              <Image src={Image3} alt={"Cole getting blown over on the Golden Gate Bridge"} priority placeholder={"blur"} />
+              <Image src={Image4} alt={"Cole sitting on a rock overlooking Vancouver"} priority
+                     placeholder={"blur"} />
             </_ImageWrapper>
           </SwiperSlide>
           <SwiperSlide>
             <_ImageWrapper>
-              <Image src={Image4} alt={"Cole sitting on a rock overlooking Vancouver"} priority
-                     placeholder={"blur"} />
+              <Image src={Image3} alt={"Cole getting blown over on the Golden Gate Bridge"} priority placeholder={"blur"} />
             </_ImageWrapper>
           </SwiperSlide>
         </Swiper>
