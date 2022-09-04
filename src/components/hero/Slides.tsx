@@ -45,6 +45,11 @@ export const HeroSlides = () => {
           </SwiperSlide>
           <SwiperSlide>
             <_ImageWrapper>
+              <Image src={Image5} alt={"Cole in his yearbook era"} priority placeholder={"blur"} />
+            </_ImageWrapper>
+          </SwiperSlide>
+          <SwiperSlide>
+            <_ImageWrapper>
               <Image src={Image2} alt={"Cole eating a poké bowl"} priority placeholder={"blur"} />
             </_ImageWrapper>
           </SwiperSlide>
@@ -57,11 +62,6 @@ export const HeroSlides = () => {
             <_ImageWrapper>
               <Image src={Image4} alt={"Cole sitting on a rock overlooking Vancouver"} priority
                      placeholder={"blur"} />
-            </_ImageWrapper>
-          </SwiperSlide>
-          <SwiperSlide>
-            <_ImageWrapper>
-              <Image src={Image5} alt={"Cole in his yearbook era"} priority placeholder={"blur"} />
             </_ImageWrapper>
           </SwiperSlide>
         </Swiper>
