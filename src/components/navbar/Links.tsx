@@ -1,5 +1,3 @@
-import React from "react";
-
 import {
   HStack,
   IconButton,
@@ -7,8 +5,8 @@ import {
   LinkBox,
   LinkOverlay,
   Menu,
-  MenuDivider,
   MenuButton,
+  MenuDivider,
   MenuItem,
   MenuList,
 } from "@chakra-ui/react";
@@ -97,13 +95,13 @@ function _SMNavbarLinks() {
         <LinkBox>
           <MenuItem>
             <LinkOverlay
-              href={"https://blog.colegaw.in"}
+              href={"https://instructive.dev"}
               isExternal
               sx={{ display: "flex", alignItems: "center" }}
-              color={"amber.600"}
+              color={"red.600"}
               fontWeight={"medium"}
             >
-              Read my blog
+              Programming blog
               {/*<span style={{ marginLeft: "5px" }}>
                 <HiExternalLink />
               </span>*/}
