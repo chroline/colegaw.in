@@ -8,7 +8,10 @@ import { NavbarButtons } from "~/components/navbar/Buttons";
 import { NavbarLinks } from "~/components/navbar/Links";
 import { NameLogo } from "~/components/shared/NameLogo";
 
-const _Wrapper: React.FC<{ display: Record<string, "flex" | "none"> }> = ({ children, display }) => {
+const _Wrapper: React.FC<{ display: Record<string, "flex" | "none">; children: React.ReactNode }> = ({
+  children,
+  display,
+}) => {
   const { y: scroll } = useWindowScroll();
 
   return (

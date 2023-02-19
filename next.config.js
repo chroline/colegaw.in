@@ -1,6 +1,4 @@
-const withPreact = require("next-plugin-preact");
-
-module.exports = withPreact({
+module.exports = {
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.mdx/,
@@ -17,4 +15,4 @@ module.exports = withPreact({
   images: {
     formats: ["image/avif", "image/webp"],
   },
-});
+};

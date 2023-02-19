@@ -1,7 +1,8 @@
 import React from "react";
+
 import { Text } from "@chakra-ui/react";
 
-export const HighlightText: React.FC<{ textColor: string; highlightColor: string }> = ({
+export const HighlightText: React.FC<{ textColor: string; highlightColor: string; children: React.ReactNode }> = ({
   textColor,
   highlightColor,
   children,

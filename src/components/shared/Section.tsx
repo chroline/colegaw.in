@@ -2,7 +2,7 @@ import React from "react";
 
 import { Flex } from "@chakra-ui/layout";
 
-export const Section: React.FC<{ background?: string; borderColor?: string }> = ({
+export const Section: React.FC<{ background?: string; borderColor?: string; children: React.ReactNode }> = ({
   children,
   background,
   borderColor,

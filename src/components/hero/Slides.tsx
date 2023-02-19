@@ -12,11 +12,14 @@ import Image3 from "../../../public/img/me3.png";
 import Image4 from "../../../public/img/me4.png";
 import Image5 from "../../../public/img/me5.png";
 
-const _ImageWrapper: React.FC = ({ children }) => (
+const _ImageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <Box
     w={"full"}
     h={"full"}
-    sx={{ "> span": { height: "100% !important" }, img: { objectFit: "cover", objectPosition: "center" } }}
+    sx={{
+      "> span": { height: "100% !important" },
+      img: { objectFit: "cover", objectPosition: "center", w: "full", h: "full" },
+    }}
     borderRadius={"18px"}
     overflow={"hidden"}
   >
