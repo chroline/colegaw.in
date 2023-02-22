@@ -48,7 +48,7 @@ export default function Hero() {
           )}
           <VStack spacing={6} w={"full"} pt={{ base: 12, lg: 0 }}>
             <Stack direction={{ base: "column-reverse", lg: "column" }} spacing={6} w={"full"}>
-              <VStack spacing={6} w={"full"}>
+              <VStack spacing={6} w={"full"} align={"start"}>
                 <HeroTitle />
                 <HeroSubtitles />
               </VStack>
