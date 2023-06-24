@@ -5,8 +5,8 @@ import Head from "next/head";
 import { Section } from "~/components/shared/Section";
 
 const Hero = dynamic(async () => await import("~/components/hero"));
-const About = dynamic(async () => await import("~/components/about"));
-const BrandgineerInfo = dynamic(async () => await import("~/components/brandgineer-info"));
+// const About = dynamic(async () => await import("~/components/about"));
+// const BrandgineerInfo = dynamic(async () => await import("~/components/brandgineer-info"));
 const Projects = dynamic(async () => await import("~/components/projects"));
 const Footer = dynamic(async () => await import("~/components/footer"));
 

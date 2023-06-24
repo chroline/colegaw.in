@@ -2,8 +2,6 @@ import React from "react";
 
 import { Box } from "@chakra-ui/react";
 import Image from "next/image";
-import { useAsync } from "react-use";
-import SwiperCore, { Autoplay, EffectCards } from "swiper";
 
 import Image1 from "../../../public/img/me1.jpg";
 
@@ -24,8 +22,6 @@ const _ImageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 );
 
 export const HeroSlides = () => {
-  const init = useAsync(async () => SwiperCore.use([EffectCards, Autoplay]));
-
   return (
     <Box className={"hero-slides"} w={{ base: "2xs", sm: "xs" }} h={{ base: "sm", sm: "md" }}>
       <_ImageWrapper>
