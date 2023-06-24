@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'PolySans';
+    src: url('PolySans-Bulky.woff2') format('woff2'),
+        url('PolySans-Bulky.woff') format('woff'),
+        url('PolySans-Bulky.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PolySans';
+    src: url('PolySans-BulkyItalic.woff2') format('woff2'),
+        url('PolySans-BulkyItalic.woff') format('woff'),
+        url('PolySans-BulkyItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PolySans';
+    src: url('PolySans-Median.woff2') format('woff2'),
+        url('PolySans-Median.woff') format('woff'),
+        url('PolySans-Median.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PolySans Neutral';
+    src: url('PolySans-NeutralItalic.woff2') format('woff2'),
+        url('PolySans-NeutralItalic.woff') format('woff'),
+        url('PolySans-NeutralItalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PolySans';
+    src: url('PolySans-SlimItalic.woff2') format('woff2'),
+        url('PolySans-SlimItalic.woff') format('woff'),
+        url('PolySans-SlimItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PolySans';
+    src: url('PolySans-Neutral.woff2') format('woff2'),
+        url('PolySans-Neutral.woff') format('woff'),
+        url('PolySans-Neutral.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PolySans';
+    src: url('PolySans-MedianItalic.woff2') format('woff2'),
+        url('PolySans-MedianItalic.woff') format('woff'),
+        url('PolySans-MedianItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PolySans';
+    src: url('PolySans-Slim.woff2') format('woff2'),
+        url('PolySans-Slim.woff') format('woff'),
+        url('PolySans-Slim.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
