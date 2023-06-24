@@ -9,7 +9,3 @@ body,
   overflow-y: visible;
   overflow-x: hidden;
 }
-
-.swiper-pagination-bullet:not([class*="swiper-pagination-bullet-"]) {
-  transform: scale(0) !important;
-}

@@ -1,13 +1,9 @@
 import { VStack } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
-import { useAsync } from "react-use";
-import SwiperCore, { Autoplay } from "swiper";
 
 const ProjectsSlides = dynamic(async () => (await import("./Slides")).ProjectsSlides);
 
 export default function Projects() {
-  useAsync(async () => SwiperCore.use([Autoplay]));
-
   return (
     <VStack justify={"space-around"} align={"center"} spacing={12} py={24} w={"full"}>
       {/* <Stack

@@ -3,7 +3,7 @@ import React from "react";
 import { AspectRatio, Box, LinkBox, LinkOverlay, Tooltip, useBreakpointValue } from "@chakra-ui/react";
 import NextImage from "next/image";
 import { useAsync, useWindowSize } from "react-use";
-import SwiperCore, { Mousewheel, Pagination } from "swiper";
+import SwiperCore, { Autoplay, Mousewheel, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import projectsData from "../../../data/projects.json";
@@ -34,7 +34,8 @@ export function ProjectsSlides() {
   const shouldLoop = useBreakpointValue({ base: true, "2xl": false }, "sm");
   const spaceBetween = useBreakpointValue({ base: 20, lg: 30 }, "sm");
 
-  const init = useAsync(async () => SwiperCore.use([Pagination, Mousewheel]));
+  const init = useAsync(async () => SwiperCore.use([Autoplay, Pagination, Mousewheel]));
+  console.log(init);
 
   return (
     <Box className={"projects-slides"} w={"full"} sx={{}}>
@@ -86,6 +87,10 @@ export function ProjectsSlides() {
 
         :global(.projects-slides .swiper-slide-active) {
           opacity: 1;
+        }
+
+        :global(.swiper-pagination-bullet:not([class*="swiper-pagination-bullet-"])) {
+          transform: scale(0) !important;
         }
       `}</style>
     </Box>
