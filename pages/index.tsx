@@ -34,7 +34,7 @@ const Index = () => {
         }}
       />
       {/* <Navbar /> */}
-      <Section background={"gray.50"}>
+      <Section>
         <Hero />
       </Section>
       <Section>
