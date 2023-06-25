@@ -2,7 +2,7 @@ import React from "react";
 
 import { Text, useColorModeValue } from "@chakra-ui/react";
 
-import theme from "~/util/theme";
+import theme from "~/core/util/theme";
 
 export const HighlightText: React.FC<{ color: keyof typeof theme.colors; children: React.ReactNode }> = ({
   color,

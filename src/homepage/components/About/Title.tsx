@@ -1,6 +1,6 @@
 import { Heading } from "@chakra-ui/react";
 
-import { HighlightText } from "~/components/shared/HighlightText";
+import { HighlightText } from "~/common/components/HighlightText";
 
 export const AboutTitle = () => (
   <Heading as={"h1"} fontSize={{ base: "3xl", sm: "4xl" }}>

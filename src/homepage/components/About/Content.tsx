@@ -1,6 +1,6 @@
 import { VStack } from "@chakra-ui/react";
 
-import _AboutContent from "../../../data/aboutContent.mdx";
+import _AboutContent from "../../../../data/aboutContent.mdx";
 
 const styles = {
   "> *": { w: "full", color: "gray.500", fontSize: "lg" },

@@ -1,6 +1,6 @@
 import { Box, useBreakpointValue, useColorModeValue } from "@chakra-ui/react";
 
-import theme from "~/util/theme";
+import theme from "~/core/util/theme";
 
 export const HeroDecoration = () => {
   const strokeColor = useColorModeValue(theme.colors.gray[200], theme.colors.gray[700]);

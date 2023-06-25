@@ -4,19 +4,19 @@ import Head from "next/head";
 import { Router } from "next/router";
 import NProgress from "nprogress";
 
-import "~/util/base.css";
-import "~/util/nprogress.css";
-import "~/vendor/Inter Web/inter.css";
-import "~/vendor/PolySans/stylesheet.css";
-import "~/vendor/swiper/effect-cards.min.css";
-import "~/vendor/swiper/pagination.min.css";
-import "~/vendor/swiper/swiper.min.css";
+import "~/core/util/base.css";
+import "~/core/util/nprogress.css";
+import "~/core/vendor/Inter Web/inter.css";
+import "~/core/vendor/PolySans/stylesheet.css";
+import "~/core/vendor/swiper/effect-cards.min.css";
+import "~/core/vendor/swiper/pagination.min.css";
+import "~/core/vendor/swiper/swiper.min.css";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 
-const AppWrapper = dynamic(async () => (await import("~/components/shared/AppWrapper")).AppWrapper);
+const AppWrapper = dynamic(async () => (await import("~/common/components/AppWrapper")).AppWrapper);
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

@@ -6,7 +6,7 @@ import { useAsync, useWindowSize } from "react-use";
 import SwiperCore, { Autoplay, Mousewheel, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import projectsData from "../../../data/projects.json";
+import projectsData from "../../../../data/projects.json";
 
 const _Slide: React.FC<{ id: string; title: string }> = ({ id, title }) => (
   <Tooltip label={title}>
@@ -35,7 +35,6 @@ export function ProjectsSlides() {
   const spaceBetween = useBreakpointValue({ base: 20, lg: 30 }, "sm");
 
   const init = useAsync(async () => SwiperCore.use([Autoplay, Pagination, Mousewheel]));
-  console.log(init);
 
   return (
     <Box className={"projects-slides"} w={"full"} sx={{}}>

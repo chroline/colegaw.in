@@ -1,7 +1,7 @@
 import { VStack } from "@chakra-ui/react";
 
-import { FooterCredits } from "~/components/footer/Credits";
-import { CheckOutMyLynk } from "~/components/shared/CheckOutMyLynk";
+import { CheckOutMyLynk } from "~/common/components/CheckOutMyLynk";
+import { FooterCredits } from "~/homepage/components/Footer/Credits";
 
 export default function Footer() {
   return (

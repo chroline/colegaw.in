@@ -1,16 +1,25 @@
+import { useEffect } from "react";
+
+import { useColorMode } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 
-import { Section } from "~/components/shared/Section";
+import { Section } from "~/common/components/Section";
 
-const Hero = dynamic(async () => await import("~/components/hero"));
-// const About = dynamic(async () => await import("~/components/about"));
+const Hero = dynamic(async () => await import("~/homepage/components/Hero"));
+const About = dynamic(async () => await import("~/homepage/components/About"));
 // const BrandgineerInfo = dynamic(async () => await import("~/components/brandgineer-info"));
-const Projects = dynamic(async () => await import("~/components/projects"));
-const Footer = dynamic(async () => await import("~/components/footer"));
+const Projects = dynamic(async () => await import("~/homepage/components/Projects"));
+const Footer = dynamic(async () => await import("~/homepage/components/Footer"));
 
 const Index = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  useEffect(() => {
+    if (colorMode !== "light") toggleColorMode();
+  }, [colorMode, toggleColorMode]);
+
   return (
     <>
       <Head>
@@ -39,6 +48,9 @@ const Index = () => {
       </Section>
       <Section>
         <Projects />
+      </Section>
+      <Section>
+        <About />
       </Section>
       <Section>
         <Footer />

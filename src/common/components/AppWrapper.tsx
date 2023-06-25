@@ -1,8 +1,8 @@
 import React from "react";
 
-import { extendTheme, ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
-import theme from "~/util/theme";
+import theme from "~/core/util/theme";
 
 export const AppWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (

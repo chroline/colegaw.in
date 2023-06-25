@@ -1,12 +1,11 @@
-import { Box, Flex, HStack, Stack, VStack, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Flex, HStack, Heading, Stack, Text, VStack, useBreakpointValue } from "@chakra-ui/react";
 
-import { Logo } from "../shared/Logo";
-import { NameLogo } from "../shared/NameLogo";
-import { Socials } from "../shared/Socials";
+import { HighlightText } from "../../../common/components/HighlightText";
+import { Logo } from "../../../common/components/Logo";
+import { NameLogo } from "../../../common/components/NameLogo";
+import { Socials } from "../../../common/components/Socials";
 import { HeroDecoration } from "./Decoration";
-import { HeroSubtitles } from "./Subtitles";
-import { HeroTitle } from "./Title";
-import { HeroSlides } from "~/components/hero/Slides";
+import { HeroImage } from "~/homepage/components/Hero/Image";
 
 export default function Hero(): JSX.Element {
   const isLG = useBreakpointValue({ base: false, lg: true });
@@ -37,15 +36,21 @@ export default function Hero(): JSX.Element {
             </HStack>
             <VStack spacing={6} w={"full"}>
               <VStack spacing={6} w={"full"}>
-                <HeroTitle />
-                <HeroSubtitles />
+                <Heading as={"h1"} fontSize={"4xl"} fontWeight={"semibold"}>
+                  Versatile <HighlightText color={"blue"}>software engineer</HighlightText>, intuitive{" "}
+                  <HighlightText color={"green"}>UI/UX designer</HighlightText>, & enterprising{" "}
+                  <HighlightText color={"purple"}>innovator</HighlightText>.
+                </Heading>
+                <Text opacity={0.65} fontSize={{ base: "xl", sm: "2xl" }}>
+                  I work on innovative products to deliver quality experiences to meaningful audiences.
+                </Text>
               </VStack>
               <Box pt={2}>
                 <Socials />
               </Box>
             </VStack>
           </VStack>
-          <HeroSlides />
+          <HeroImage />
         </Stack>
       </Flex>
     </>

@@ -1,9 +1,7 @@
-import { Box, Flex, Text, VStack } from "@chakra-ui/react";
-import NextImage from "next/image";
+import { Text, VStack } from "@chakra-ui/react";
 
-import Signature from "../../../public/img/signature.svg";
-import { AboutContent } from "~/components/about/Content";
-import { AboutTitle } from "~/components/about/Title";
+import { AboutContent } from "~/homepage/components/About/Content";
+import { AboutTitle } from "~/homepage/components/About/Title";
 
 export default function About() {
   return (
@@ -20,11 +18,6 @@ export default function About() {
         <AboutTitle />
       </VStack>
       <AboutContent />
-      <Flex justify={{ base: "center", md: "flex-end" }} w={"full"}>
-        <Box w={72} pt={6}>
-          <NextImage src={Signature} alt={"Cole Gawin"} />
-        </Box>
-      </Flex>
     </VStack>
   );
 }
