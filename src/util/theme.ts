@@ -1,4 +1,4 @@
-import { createBreakpoints } from "@chakra-ui/theme-tools";
+import { StyleFunctionProps, createBreakpoints, mode } from "@chakra-ui/theme-tools";
 
 const fonts = {
   body: `'Inter', sans-serif`,
@@ -17,18 +17,6 @@ const breakpoints = createBreakpoints({
 const colors = {
   black: "#000",
   white: "#fff",
-  whiteTheme: {
-    50: "rgba(255,255,255,0.25)",
-    100: "#fff",
-    200: "#fff",
-    300: "#fff",
-    400: "#fff",
-    500: "#fff",
-    600: "#fff",
-    700: "#fff",
-    800: "#fff",
-    900: "#fff",
-  },
   rose: {
     50: "#fff1f2",
     100: "#ffe4e6",
@@ -90,16 +78,16 @@ const colors = {
     900: "#4c1d95",
   },
   indigo: {
-    50: "#ECEEF8",
-    100: "#CACFED",
-    200: "#A8B1E1",
-    300: "#8692D5",
-    400: "#6473C9",
-    500: "#4255BD",
-    600: "#354497",
-    700: "#283371",
-    800: "#1A224C",
-    900: "#0D1126",
+    50: "#eef2ff",
+    100: "#e0e7ff",
+    200: "#c7d2fe",
+    300: "#a5b4fc",
+    400: "#818cf8",
+    500: "#6366f1",
+    600: "#4f46e5",
+    700: "#4338ca",
+    800: "#3730a3",
+    900: "#312e81",
   },
   blue: {
     50: "#eff6ff",
@@ -138,16 +126,16 @@ const colors = {
     900: "#164e63",
   },
   teal: {
-    50: "#E6FFFA",
-    100: "#B2F5EA",
-    200: "#81E6D9",
-    300: "#4FD1C5",
-    400: "#38B2AC",
-    500: "#319795",
-    600: "#2C7A7B",
-    700: "#285E61",
-    800: "#234E52",
-    900: "#1D4044",
+    50: "#f0fdfa",
+    100: "#ccfbf1",
+    200: "#99f6e4",
+    300: "#5eead4",
+    400: "#2dd4bf",
+    500: "#14b8a6",
+    600: "#0d9488",
+    700: "#0f766e",
+    800: "#115e59",
+    900: "#134e4a",
   },
   emerald: {
     50: "#ecfdf5",
@@ -210,20 +198,16 @@ const colors = {
     900: "#78350f",
   },
   orange: {
-    50: "#fff3e0",
-    100: "#ffe0b2",
-    200: "#ffcc80",
-    300: "#ffb74d",
-    400: "#ffa726",
-    500: "#ff9800",
-    600: "#fb8c00",
-    700: "#f57c00",
-    800: "#ef6c00",
-    900: "#e65100",
-    a100: "#ffd180",
-    a200: "#ffab40",
-    a400: "#ff9100",
-    a700: "#ff6d00",
+    50: "#fff7ed",
+    100: "#ffedd5",
+    200: "#fed7aa",
+    300: "#fdba74",
+    400: "#fb923c",
+    500: "#f97316",
+    600: "#ea580c",
+    700: "#c2410c",
+    800: "#9a3412",
+    900: "#7c2d12",
   },
   red: {
     50: "#fef2f2",
@@ -262,6 +246,18 @@ const colors = {
     900: "#171717",
   },
   gray: {
+    50: "#fafafa",
+    100: "#f4f4f5",
+    200: "#e4e4e7",
+    300: "#d4d4d8",
+    400: "#a1a1aa",
+    500: "#71717a",
+    600: "#52525b",
+    700: "#3f3f46",
+    800: "#27272a",
+    900: "#18181b",
+  },
+  coolGray: {
     50: "#f9fafb",
     100: "#f3f4f6",
     200: "#e5e7eb",
@@ -362,5 +358,20 @@ const sizes = {
   },
 };
 
-const theme = { fonts, breakpoints, colors, shadows, space, sizes };
+const theme = {
+  fonts,
+  breakpoints,
+  colors,
+  shadows,
+  space,
+  sizes,
+  styles: {
+    global: (props: StyleFunctionProps) => ({
+      body: {
+        bg: mode(theme.colors.gray[50], theme.colors.gray[900])(props),
+      },
+    }),
+  },
+};
+
 export default theme;
