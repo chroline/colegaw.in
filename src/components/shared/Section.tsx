@@ -14,7 +14,6 @@ export const Section: React.FC<{ background?: string; borderColor?: string; chil
     align={"center"}
     position={"relative"}
     overflow={"visible"}
-    background={background}
     borderTop={borderColor && "1px solid"}
     borderColor={borderColor}
   >

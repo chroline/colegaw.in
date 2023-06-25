@@ -372,6 +372,10 @@ const theme = {
       },
     }),
   },
+  config: {
+    initialColorMode: "light",
+    useSystemColorMode: true,
+  },
 };
 
 export default theme;

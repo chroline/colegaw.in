@@ -1,11 +1,9 @@
-import React from "react";
-
 import { Box, Flex, Link, Stack, Text } from "@chakra-ui/react";
 import { RiHeartFill } from "react-icons/ri";
 
 export const FooterCredits = () => (
   <Stack direction={{ base: "column", md: "row" }} textAlign={"center"} spacing={0} pt={6}>
-    <Flex justify={"center"} align={"center"} fontWeight={"medium"} color={"gray.700"}>
+    <Flex justify={"center"} align={"center"} fontWeight={"medium"} opacity={0.7}>
       <Text as={"span"}>made with</Text>
       <Box as={"span"} color={"pink.500"} mx={1}>
         <RiHeartFill />
@@ -15,7 +13,7 @@ export const FooterCredits = () => (
         &nbsp;·&nbsp;
       </Text>
     </Flex>
-    <Link href={"https://github.com/chroline/colegaw.in"} isExternal color={"gray.500"}>
+    <Link href={"https://github.com/chroline/colegaw.in"} isExternal opacity={0.5}>
       View source on Github
     </Link>
   </Stack>

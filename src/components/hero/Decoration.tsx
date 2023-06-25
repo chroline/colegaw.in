@@ -1,24 +1,43 @@
-import { Box } from "@chakra-ui/react";
+import { Box, useBreakpointValue, useColorModeValue } from "@chakra-ui/react";
 
-export const HeroDecoration = () => (
-  <Box display={{ base: "none", md: "block" }} pos={"absolute"} top={0} bottom={0} w={"full"} h={"full"}>
-    <Box pos={"absolute"} left={"85%"} color={"purple.500"} opacity={0.3}>
-      <svg width="400" height="400" fill="none" viewBox="0 0 400 400">
+import theme from "~/util/theme";
+
+export const HeroDecoration = () => {
+  const strokeColor = useColorModeValue(theme.colors.gray[200], theme.colors.gray[700]);
+  const isLG = useBreakpointValue({ base: false, lg: true });
+
+  return (
+    <Box
+      sx={{
+        position: "absolute",
+        width: "150%",
+        height: isLG ? "150%" : "50%",
+        //background: theme.colors.blueGray[300],
+        maskImage: `radial-gradient(100% 100% at top ${isLG ? "right" : "center"},white,transparent)`,
+      }}
+    >
+      <Box
+        as="svg"
+        sx={{
+          width: "100%",
+          height: "100%",
+          stroke: strokeColor,
+        }}
+      >
         <defs>
           <pattern
-            id="74b3fd99-0a6f-4271-bef2-e80eeafdf357"
-            x="0"
-            y="0"
-            width="20"
-            height="20"
+            id="0787a7c5-978c-4f66-83c7-11c213f99cb7"
+            width={isLG ? "100" : "80"}
+            height={isLG ? "100" : "80"}
+            x="50%"
+            y="-1"
             patternUnits="userSpaceOnUse"
           >
-            {/* <rect x="0" y="0" width="4" height="4" fill="blue" className="css-20bm7s" /> */}
-            <circle cx="2" cy="2" r="2" fill="currentColor" />
+            <path d="M.5 200V.5H200" fill="none"></path>
           </pattern>
         </defs>
-        <rect width="400" height="400" fill="url(#74b3fd99-0a6f-4271-bef2-e80eeafdf357)" />
-      </svg>
+        <rect width="100%" height="100%" strokeWidth="0" fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)"></rect>
+      </Box>
     </Box>
-  </Box>
-);
+  );
+};

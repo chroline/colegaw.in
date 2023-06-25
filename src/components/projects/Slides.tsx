@@ -89,6 +89,10 @@ export function ProjectsSlides() {
           opacity: 1;
         }
 
+        :global(body.chakra-ui-dark .swiper-pagination-bullet:not([class*="swiper-pagination-bullet-active-main"])) {
+          background: white !important;
+        }
+
         :global(.swiper-pagination-bullet:not([class*="swiper-pagination-bullet-"])) {
           transform: scale(0) !important;
         }
