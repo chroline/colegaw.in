@@ -2,11 +2,7 @@ import React from "react";
 
 import { Flex } from "@chakra-ui/layout";
 
-export const Section: React.FC<{ background?: string; borderColor?: string; children: React.ReactNode }> = ({
-  children,
-  background,
-  borderColor,
-}) => (
+export const Section: React.FC<{ borderColor?: string; children: React.ReactNode }> = ({ children, borderColor }) => (
   <Flex
     as={"section"}
     direction={"column"}
