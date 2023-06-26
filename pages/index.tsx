@@ -2,16 +2,14 @@ import { useEffect } from "react";
 
 import { Box, Flex, Stack, VStack, useColorMode } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
-import dynamic from "next/dynamic";
 import Head from "next/head";
 
+import { Footer } from "~/common/components/Footer";
+import { AboutText } from "~/homepage/components/AboutText";
 import { BioSidebar } from "~/homepage/components/BioSidebar";
+import { Hero } from "~/homepage/components/Hero";
 import { Interests } from "~/homepage/components/Interests";
 import { ProjectSlides } from "~/homepage/components/ProjectSlides";
-
-const Hero = dynamic(() => import("~/homepage/components/Hero").then(v => v.Hero));
-const AboutText = dynamic(() => import("~/homepage/components/AboutText").then(v => v.AboutText));
-const Footer = dynamic(() => import("~/common/components/Footer").then(v => v.Footer));
 
 const Index = () => {
   const { colorMode, toggleColorMode } = useColorMode();
