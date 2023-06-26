@@ -10,9 +10,11 @@ export function Interests() {
       <MarkdownStyle>
         <_Interests />
       </MarkdownStyle>
-      <Button size={"lg"} colorScheme={"blue"} variant={"link"}>
-        View my resume →
-      </Button>
+      <a href={"https://linkedin.com/in/colegawin"} target={"_blank"}>
+        <Button size={"lg"} colorScheme={"blue"} variant={"link"}>
+          View my resume →
+        </Button>
+      </a>
     </VStack>
   );
 }

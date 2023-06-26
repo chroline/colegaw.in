@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { Box, Button, Flex, Stack, VStack, useBreakpointValue, useColorMode } from "@chakra-ui/react";
+import { Box, Flex, Stack, VStack, useBreakpointValue, useColorMode } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import Head from "next/head";
@@ -69,9 +69,9 @@ const Index = () => {
       >
         <VStack spacing={8} align={"center"} w={"full"} maxW={"5xl"}>
           <AboutText />
-          <Button size={"lg"} colorScheme={"blue"} variant={"link"}>
+          {/* <Button size={"lg"} colorScheme={"blue"} variant={"link"}>
             More about me →
-          </Button>
+          </Button> */}
         </VStack>
         <Stack
           spacing={{ base: 24, lg: 12 }}
