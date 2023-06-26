@@ -23,6 +23,6 @@ const _ImageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
 export const HeroImage = () => (
   <_ImageWrapper>
-    <Image src={Image1} alt={"Cole looking professional"} priority quality={100} />
+    <Image src={Image1} alt={"Cole looking professional"} priority quality={100} placeholder={"blur"} />
   </_ImageWrapper>
 );
