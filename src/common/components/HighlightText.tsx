@@ -22,8 +22,8 @@ export const HighlightText: React.FC<{ color: keyof typeof theme.colors; childre
               transparent 0%,
               transparent 65%,
               currentColor 65%,
-              currentColor 85%,
-              transparent 85%
+              currentColor 90%,
+              transparent 90%
             );
           }
         `}</style>

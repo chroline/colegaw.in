@@ -1,12 +1,10 @@
-import { VStack } from "@chakra-ui/react";
+import React from "react";
 
-import _AboutContent from "../../../../data/aboutContent.mdx";
+import { SystemStyleObject, VStack } from "@chakra-ui/react";
+import deepmerge from "deepmerge";
 
 const styles = {
-  "> *": { w: "full", color: "gray.500", fontSize: "lg" },
-  p: {
-    "&:nth-of-type(1)": { fontSize: "xl" },
-  },
+  "> *": { w: "full", opacity: 1, fontSize: "md" },
   a: {
     textDecoration: "underline",
   },
@@ -17,7 +15,7 @@ const styles = {
   },
   li: {
     counterIncrement: "section",
-    mt: 6,
+    mt: 3,
     pl: 3,
     "&:nth-of-type(1)": {
       mt: 0,
@@ -37,10 +35,8 @@ const styles = {
   },
 };
 
-export const AboutContent = () => {
-  return (
-    <VStack spacing={6} sx={styles}>
-      <_AboutContent />
-    </VStack>
-  );
-};
+export const MarkdownStyle = ({ sx, children }: { sx?: SystemStyleObject; children: React.ReactNode }) => (
+  <VStack spacing={6} sx={deepmerge(styles, sx || {})}>
+    {children}
+  </VStack>
+);

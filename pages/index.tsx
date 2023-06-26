@@ -1,17 +1,17 @@
 import { useEffect } from "react";
 
-import { useColorMode } from "@chakra-ui/react";
+import { Box, Button, Flex, Stack, VStack, useBreakpointValue, useColorMode } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 
-import { Section } from "~/common/components/Section";
+import { BioSidebar } from "~/homepage/components/BioSidebar";
+import { Interests } from "~/homepage/components/Interests";
+import { ProjectSlides } from "~/homepage/components/ProjectSlides";
 
-const Hero = dynamic(async () => await import("~/homepage/components/Hero"));
-const About = dynamic(async () => await import("~/homepage/components/About"));
-// const BrandgineerInfo = dynamic(async () => await import("~/components/brandgineer-info"));
-const Projects = dynamic(async () => await import("~/homepage/components/Projects"));
-const Footer = dynamic(async () => await import("~/homepage/components/Footer"));
+const Hero = dynamic(() => import("~/homepage/components/Hero").then(v => v.Hero));
+const AboutText = dynamic(() => import("~/homepage/components/AboutText").then(v => v.AboutText));
+const Footer = dynamic(() => import("~/common/components/Footer").then(v => v.Footer));
 
 const Index = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -19,6 +19,8 @@ const Index = () => {
   useEffect(() => {
     if (colorMode !== "light") toggleColorMode();
   }, [colorMode, toggleColorMode]);
+
+  const stackDirection = useBreakpointValue({ base: "column", lg: "row" }, "sm") as "column" | "row";
 
   return (
     <>
@@ -42,19 +44,63 @@ const Index = () => {
           cardType: "summary_large_image",
         }}
       />
-      {/* <Navbar /> */}
-      <Section>
+      <Flex
+        as={"section"}
+        direction={"column"}
+        justify={"start"}
+        align={"center"}
+        position={"relative"}
+        overflow={"visible"}
+      >
         <Hero />
-      </Section>
-      <Section>
-        <Projects />
-      </Section>
-      <Section>
-        <About />
-      </Section>
-      <Section>
-        <Footer />
-      </Section>
+      </Flex>
+      <VStack justify={"space-around"} align={"center"} spacing={12} py={24} w={"full"}>
+        <ProjectSlides />
+      </VStack>
+      <VStack
+        pt={8}
+        pb={24}
+        spacing={24}
+        direction={"column"}
+        justify={"start"}
+        align={"center"}
+        position={"relative"}
+        overflow={"visible"}
+      >
+        <VStack spacing={8} align={"center"} w={"full"} maxW={"5xl"}>
+          <AboutText />
+          <Button size={"lg"} colorScheme={"blue"} variant={"link"}>
+            More about me →
+          </Button>
+        </VStack>
+        <Stack
+          spacing={{ base: 24, lg: 12 }}
+          direction={stackDirection}
+          align={{ base: "center", lg: "start" }}
+          justify={"space-between"}
+          w={"full"}
+          maxW={"5xl"}
+          px={{ base: 6, sm: 12, lg: 20 }}
+        >
+          <BioSidebar />
+          <Box w={{ base: "full", sm: "lg", lg: "sm" }}>
+            <Interests />
+          </Box>
+        </Stack>
+        {/* <HStack
+          spacing={{ base: 24, lg: 12 }}
+          direction={stackDirection}
+          align={{ base: "center", lg: "start" }}
+          justify={"space-between"}
+          w={"full"}
+          maxW={"7xl"}
+          px={{ base: 6, sm: 12, lg: 20 }}
+        >
+          <Interests />
+          <BioSidebar />
+        </HStack> */}
+      </VStack>
+      <Footer />
       {/* <Section>
         <BrandgineerInfo />
       </Section>

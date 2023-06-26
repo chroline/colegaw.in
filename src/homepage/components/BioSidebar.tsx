@@ -1,0 +1,75 @@
+import { Box, HStack, Text, VStack } from "@chakra-ui/react";
+import Image from "next/image";
+
+import education from "~/data/education.json";
+import workExperience from "~/data/work.json";
+
+import theme from "~/core/util/theme";
+
+import { BubbleLogo } from "~/common/components/BubbleLogo";
+import { InfoBox } from "~/common/components/InfoBox";
+import { Briefcase, GraduationCap } from "~/common/components/icons";
+
+export function BioSidebar() {
+  return (
+    <VStack spacing={7} align={"end"} w={"full"} maxW={{ base: "full", sm: "lg", lg: "md" }}>
+      <InfoBox icon={<Briefcase />} title={"Work Experience"}>
+        <VStack spacing={5} w={"full"}>
+          {Object.entries(workExperience).map(([key, val]) => (
+            <HStack key={key} spacing={4} w={"full"}>
+              <BubbleLogo src={`/img/work/${key}.png`} alt={`${val.name} logo`} />
+              <VStack spacing={1} align={"start"} w={"full"}>
+                <Text fontSize={"sm"} fontWeight={"medium"}>
+                  {val.name}
+                </Text>
+                <HStack justify={"space-between"} w={"full"}>
+                  <Text opacity={0.7} fontSize={"sm"}>
+                    {val.title}
+                  </Text>
+                  <Text opacity={0.6} fontSize={"sm"}>
+                    {val.duration}
+                  </Text>
+                </HStack>
+              </VStack>
+            </HStack>
+          ))}
+        </VStack>
+      </InfoBox>
+      <InfoBox icon={<GraduationCap />} title={"Education"}>
+        <VStack spacing={5} w={"full"}>
+          {Object.entries(education).map(([key, val]) => (
+            <HStack key={key} align={"start"} spacing={4} w={"full"}>
+              <Box
+                position={"relative"}
+                w={`calc(${theme.space[1.5]} + ${theme.space[8]})`}
+                h={`calc(${theme.space[1.5]} + ${theme.space[8]})`}
+                borderRadius={"50%"}
+                overflow={"hidden"}
+                flexShrink={"0"}
+              >
+                <Image src={`/img/education/${key}.png`} alt={`${val.name} logo`} fill style={{ objectFit: "cover" }} />
+              </Box>
+              <VStack spacing={1} align={"start"} w={"full"}>
+                <Text fontSize={"sm"} fontWeight={"medium"}>
+                  {val.name}
+                </Text>
+                <HStack align={"end"} w={"full"}>
+                  <VStack spacing={0} align={"start"} w={"full"}>
+                    {val.description.split("\n").map((text, i) => (
+                      <Text key={i} opacity={0.7} fontSize={"sm"}>
+                        {text}
+                      </Text>
+                    ))}
+                  </VStack>
+                  <Text opacity={0.6} fontSize={"sm"} flexShrink={0}>
+                    {val.duration}
+                  </Text>
+                </HStack>
+              </VStack>
+            </HStack>
+          ))}
+        </VStack>
+      </InfoBox>
+    </VStack>
+  );
+}

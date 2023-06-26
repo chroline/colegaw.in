@@ -376,6 +376,39 @@ const theme = {
     initialColorMode: "light",
     useSystemColorMode: true,
   },
+  components: {
+    Button: {
+      variants: {
+        link: {
+          borderRadius: "0",
+          ":before": {
+            content: `""`,
+            position: "absolute",
+            height: ".25rem",
+            bottom: "-.35rem",
+            left: "-.2rem",
+            background: "currentColor",
+            opacity: 0,
+            width: 0,
+            transition: "all .2s ease",
+          },
+          ":hover": {
+            textDecoration: "none",
+            ":before": {
+              width: "calc(100% + .4rem)",
+              opacity: 0.5,
+            },
+          },
+          ":active": {
+            ":before": {
+              width: "calc(100% + .4rem)",
+              opacity: 0.7,
+            },
+          },
+        },
+      },
+    },
+  },
 };
 
 export default theme;

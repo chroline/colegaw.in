@@ -21,12 +21,8 @@ const _ImageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   </Box>
 );
 
-export const HeroImage = () => {
-  return (
-    <Box w={{ base: "2xs", sm: "xs" }} h={{ base: "sm", sm: "md" }}>
-      <_ImageWrapper>
-        <Image src={Image1} alt={"Cole looking professional"} priority quality={100} />
-      </_ImageWrapper>
-    </Box>
-  );
-};
+export const HeroImage = () => (
+  <_ImageWrapper>
+    <Image src={Image1} alt={"Cole looking professional"} priority quality={100} />
+  </_ImageWrapper>
+);

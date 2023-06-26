@@ -1,17 +1,21 @@
 import { Box, useBreakpointValue, useColorModeValue } from "@chakra-ui/react";
+import tinycolor from "tinycolor2";
 
 import theme from "~/core/util/theme";
 
 export const HeroDecoration = () => {
-  const strokeColor = useColorModeValue(theme.colors.gray[200], theme.colors.gray[700]);
+  const strokeColor = useColorModeValue(
+    theme.colors.gray[300],
+    tinycolor(theme.colors.gray[700]).setAlpha(0.6).toString()
+  );
   const isLG = useBreakpointValue({ base: false, lg: true });
 
   return (
     <Box
       sx={{
         position: "absolute",
-        width: "150%",
-        height: isLG ? "150%" : "50%",
+        width: "100%",
+        height: isLG ? "120%" : "50%",
         //background: theme.colors.blueGray[300],
         maskImage: `radial-gradient(100% 100% at top ${isLG ? "right" : "center"},white,transparent)`,
       }}

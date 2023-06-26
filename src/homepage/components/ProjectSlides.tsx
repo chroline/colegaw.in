@@ -6,7 +6,7 @@ import { useAsync, useWindowSize } from "react-use";
 import SwiperCore, { Autoplay, Mousewheel, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import projectsData from "../../../../data/projects.json";
+import projectsData from "../../../data/projects.json";
 
 const _Slide: React.FC<{ id: string; title: string }> = ({ id, title }) => (
   <Tooltip label={title}>
@@ -29,9 +29,9 @@ const _Slide: React.FC<{ id: string; title: string }> = ({ id, title }) => (
   </Tooltip>
 );
 
-export function ProjectsSlides() {
+export function ProjectSlides() {
   const { width } = useWindowSize();
-  const shouldLoop = useBreakpointValue({ base: true, "2xl": false }, "sm");
+  const is2XL = useBreakpointValue({ base: false, "2xl": true }, "sm");
   const spaceBetween = useBreakpointValue({ base: 20, lg: 30 }, "sm");
 
   const init = useAsync(async () => SwiperCore.use([Autoplay, Pagination, Mousewheel]));
@@ -41,7 +41,8 @@ export function ProjectsSlides() {
       {!init.loading && (
         <Swiper
           key={width}
-          loop={shouldLoop}
+          initialSlide={is2XL ? Object.keys(projectsData).length - 1 : 0}
+          loop={!is2XL}
           slidesPerView={"auto"}
           centeredSlides={true}
           spaceBetween={spaceBetween}
@@ -54,9 +55,10 @@ export function ProjectsSlides() {
           autoplay={{
             delay: 4500,
             disableOnInteraction: true,
+            reverseDirection: is2XL,
           }}
         >
-          {Object.entries(projectsData).map(([id, title]) => (
+          {(is2XL ? Object.entries(projectsData).reverse() : Object.entries(projectsData)).map(([id, title]) => (
             <SwiperSlide key={id}>
               <_Slide id={id} title={title} />
             </SwiperSlide>
