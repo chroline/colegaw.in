@@ -1,4 +1,4 @@
-import { VStack, HStack, Heading, useBreakpointValue, Text, Box } from "@chakra-ui/react";
+import { Box, HStack, Heading, Text, VStack } from "@chakra-ui/react";
 
 import { HighlightText } from "~/common/components/HighlightText";
 import { Logo } from "~/common/components/Logo";
@@ -6,8 +6,6 @@ import { NameLogo } from "~/common/components/NameLogo";
 import { Socials } from "~/common/components/Socials";
 
 export function HeroContent() {
-  const isLG = useBreakpointValue({ base: false, lg: true });
-
   return (
     <VStack
       spacing={12}
@@ -21,7 +19,9 @@ export function HeroContent() {
     >
       <HStack alignSelf={{ base: "center", lg: "unset" }} align={"center"} spacing={6}>
         <Logo size={24} />
-        {isLG && <NameLogo size={{ base: 8, sm: 12 }} />}
+        <Box display={{ base: "hidden", lg: "block" }}>
+          <NameLogo size={{ base: 8, sm: 12 }} />
+        </Box>
       </HStack>
       <VStack spacing={6} w={"full"}>
         <VStack spacing={6} w={"full"}>

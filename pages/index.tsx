@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { Box, Flex, Stack, VStack, useBreakpointValue, useColorMode } from "@chakra-ui/react";
+import { Box, Flex, Stack, VStack, useColorMode } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
 import dynamic from "next/dynamic";
 import Head from "next/head";
@@ -19,8 +19,6 @@ const Index = () => {
   useEffect(() => {
     if (colorMode !== "light") toggleColorMode();
   }, [colorMode, toggleColorMode]);
-
-  const stackDirection = useBreakpointValue({ base: "column", lg: "row" }, "sm") as "column" | "row";
 
   return (
     <>
@@ -75,7 +73,7 @@ const Index = () => {
         </VStack>
         <Stack
           spacing={{ base: 24, lg: 12 }}
-          direction={stackDirection}
+          direction={{ base: "column", lg: "row" }}
           align={{ base: "center", lg: "start" }}
           justify={"space-between"}
           w={"full"}
