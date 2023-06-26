@@ -20,9 +20,10 @@
     "incremental": true,
     "baseUrl": "./src",
     "paths": {
-      "~/*": ["*"]
+      "~/*": ["*"],
+      "~/data/*": ["../data/*"]
     }
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["**/*.ts", "**/*.tsx", "src/homepage/components/AboutText/Body.tsx"]
 }

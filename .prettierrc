@@ -16,6 +16,14 @@
   "trailingComma": "es5",
   "useTabs": false,
   "vueIndentScriptAndStyle": false,
-  "importOrder": ["^(react)$", "^[^~.]", "^(~[/]api)(.*)$", "^(~[/]core)(.*)$", "^(~|[.])(.*)$", "^[./]"],
+  "importOrder": [
+    "^(react)$",
+    "^[^~.]",
+    "^(~[/]data)(.*)$",
+    "^(~[/]api)(.*)$",
+    "^(~[/]core)(.*)$",
+    "^(~)(.*)$",
+    "^[./]"
+  ],
   "importOrderSeparation": true
 }

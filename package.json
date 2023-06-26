@@ -15,6 +15,7 @@
     "@emotion/styled": "^11.10.6",
     "@mdx-js/loader": "^1.6.22",
     "@next/bundle-analyzer": "^12.0.3",
+    "deepmerge": "^4.3.1",
     "framer-motion": "^9.0.4",
     "next": "^13.1.6",
     "next-seo": "^4.28.1",
@@ -24,7 +25,8 @@
     "react-icons": "^4.2.0",
     "react-use": "^17.3.1",
     "scheduler": "^0.20.2",
-    "swiper": "^7.2.0"
+    "swiper": "^7.2.0",
+    "tinycolor2": "^1.6.0"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^2.0.2",
@@ -32,6 +34,7 @@
     "@types/nprogress": "^0.2.0",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "@types/tinycolor2": "^1.4.3",
     "eslint": "^8.43.0",
     "eslint-config-next": "^13.4.7",
     "prettier": "latest",
