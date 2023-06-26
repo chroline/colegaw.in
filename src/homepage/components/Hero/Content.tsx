@@ -19,7 +19,7 @@ export function HeroContent() {
     >
       <HStack alignSelf={{ base: "center", lg: "unset" }} align={"center"} spacing={6}>
         <Logo size={24} />
-        <Box display={{ base: "hidden", lg: "block" }}>
+        <Box display={{ base: "none", lg: "block" }}>
           <NameLogo size={{ base: 8, sm: 12 }} />
         </Box>
       </HStack>
