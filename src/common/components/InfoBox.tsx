@@ -11,9 +11,9 @@ export function InfoBox({ icon, title, children }: { icon: JSX.Element; title: s
 
   return (
     <VStack
-      spacing={7}
+      spacing={6}
       align={"start"}
-      p={7}
+      p={6}
       background={backgroundColor}
       w={"full"}
       border={"1px solid"}

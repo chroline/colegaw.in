@@ -12,21 +12,21 @@ import { Briefcase, GraduationCap } from "~/common/components/icons";
 
 export function BioSidebar() {
   return (
-    <VStack spacing={7} align={"end"} w={"full"} maxW={{ base: "full", sm: "lg", lg: "md" }}>
+    <VStack spacing={6} align={"end"} w={"full"} maxW={{ base: "full", sm: "lg", lg: "md" }}>
       <InfoBox icon={<Briefcase />} title={"Work Experience"}>
-        <VStack spacing={5} w={"full"}>
+        <VStack spacing={4} w={"full"}>
           {Object.entries(workExperience).map(([key, val]) => (
-            <HStack key={key} spacing={4} w={"full"}>
+            <HStack key={key} spacing={3} w={"full"}>
               <BubbleLogo src={`/img/work/${key}.png`} alt={`${val.name} logo`} />
-              <VStack spacing={1} align={"start"} w={"full"}>
+              <VStack spacing={0} align={"start"} w={"full"}>
                 <Text fontSize={"sm"} fontWeight={"medium"}>
                   {val.name}
                 </Text>
                 <HStack justify={"space-between"} w={"full"}>
-                  <Text opacity={0.7} fontSize={"sm"}>
+                  <Text opacity={0.7} fontSize={"xs"}>
                     {val.title}
                   </Text>
-                  <Text opacity={0.6} fontSize={"sm"}>
+                  <Text opacity={0.6} fontSize={"xs"}>
                     {val.duration}
                   </Text>
                 </HStack>
@@ -36,9 +36,9 @@ export function BioSidebar() {
         </VStack>
       </InfoBox>
       <InfoBox icon={<GraduationCap />} title={"Education"}>
-        <VStack spacing={5} w={"full"}>
+        <VStack spacing={4} w={"full"}>
           {Object.entries(education).map(([key, val]) => (
-            <HStack key={key} align={"start"} spacing={4} w={"full"}>
+            <HStack key={key} spacing={3} align={"start"} w={"full"}>
               <Box
                 position={"relative"}
                 w={`calc(${theme.space[3]} + ${theme.space[7]})`}
@@ -54,18 +54,18 @@ export function BioSidebar() {
                 <Text fontSize={"sm"} fontWeight={"medium"}>
                   {val.name}
                 </Text>
-                <HStack align={"end"} w={"full"}>
-                  <VStack spacing={0} align={"start"} w={"full"}>
-                    {val.description.split("\n").map((text, i) => (
-                      <Text key={i} opacity={0.7} fontSize={"sm"}>
-                        {text}
-                      </Text>
-                    ))}
-                  </VStack>
-                  <Text opacity={0.6} fontSize={"sm"} flexShrink={0}>
-                    {val.duration}
-                  </Text>
-                </HStack>
+                <VStack spacing={0} align={"start"} w={"full"}>
+                  {val.description.split("\n").map((text, i) => (
+                    <Text
+                      key={i}
+                      opacity={0.7}
+                      fontSize={"xs"}
+                      fontStyle={val.description.split("\n").length === i + 1 ? "italic" : ""}
+                    >
+                      {text}
+                    </Text>
+                  ))}
+                </VStack>
               </VStack>
             </HStack>
           ))}
