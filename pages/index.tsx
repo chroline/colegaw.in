@@ -55,8 +55,8 @@ const Index = () => {
       </VStack>
       <VStack
         pt={8}
-        pb={24}
-        spacing={24}
+        pb={{ base: 14, lg: 24 }}
+        spacing={{ base: 14, lg: 24 }}
         direction={"column"}
         justify={"start"}
         align={"center"}
@@ -70,8 +70,8 @@ const Index = () => {
           </Button> */}
         </VStack>
         <Stack
-          spacing={{ base: 24, lg: 12 }}
-          direction={{ base: "column", lg: "row" }}
+          spacing={{ base: 14, lg: 12 }}
+          direction={{ base: "column-reverse", lg: "row" }}
           align={{ base: "center", lg: "start" }}
           justify={"space-between"}
           w={"full"}
