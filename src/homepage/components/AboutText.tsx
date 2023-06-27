@@ -20,7 +20,7 @@ export function AboutText() {
         >
           A little introduction to Cole
         </Text>
-        <Heading as={"h1"} fontSize={{ base: "2xl", sm: "3xl" }}>
+        <Heading as={"h1"} fontSize={"3xl"}>
           I love to <HighlightText color={"indigo"}>build</HighlightText>,{" "}
           <HighlightText color={"emerald"}>design</HighlightText>, and{" "}
           <HighlightText color={"amber"}>create</HighlightText>.
