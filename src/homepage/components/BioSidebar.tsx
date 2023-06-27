@@ -41,8 +41,9 @@ export function BioSidebar() {
             <HStack key={key} align={"start"} spacing={4} w={"full"}>
               <Box
                 position={"relative"}
-                w={`calc(${theme.space[1.5]} + ${theme.space[8]})`}
-                h={`calc(${theme.space[1.5]} + ${theme.space[8]})`}
+                w={`calc(${theme.space[3]} + ${theme.space[7]})`}
+                h={`calc(${theme.space[3]} + ${theme.space[7]})`}
+                m={"1px"}
                 borderRadius={"50%"}
                 overflow={"hidden"}
                 flexShrink={"0"}
