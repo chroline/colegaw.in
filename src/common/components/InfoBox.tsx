@@ -1,32 +1,11 @@
-import { Box, HStack, Heading, VStack, useColorModeValue } from "@chakra-ui/react";
-import tinycolor from "tinycolor2";
-
-import theme from "~/core/util/theme";
-
 export function InfoBox({ icon, title, children }: { icon: JSX.Element; title: string; children?: React.ReactNode }) {
-  const backgroundColor = useColorModeValue("white", "gray.800");
-  const borderColor = tinycolor(useColorModeValue(theme.colors.gray[200], theme.colors.gray[700]))
-    .setAlpha(0.75)
-    .toString();
-
   return (
-    <VStack
-      spacing={6}
-      align={"start"}
-      p={6}
-      background={backgroundColor}
-      w={"full"}
-      border={"1px solid"}
-      borderColor={borderColor}
-      borderRadius={"xl"}
-    >
-      <HStack spacing={4} opacity={0.9}>
-        <Box w={5}>{icon}</Box>
-        <Heading fontSize={"md"} fontWeight={500}>
-          {title}
-        </Heading>
-      </HStack>
-      {children}
-    </VStack>
+    <div className="w-full p-6 bg-white border border-gray-200 rounded-xl">
+      <div className="flex items-center space-x-4 opacity-90">
+        <div className="w-5">{icon}</div>
+        <h3 className="text-md font-medium">{title}</h3>
+      </div>
+      {children && <div className="mt-6">{children}</div>}
+    </div>
   );
 }

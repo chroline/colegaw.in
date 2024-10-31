@@ -1,10 +1,8 @@
 import React from "react";
 
-import { Box } from "@chakra-ui/react";
-
 export const Logo: React.FC<{ size: any }> = ({ size }) => (
-  <Box w={size}>
-    <div className={"logo"}>
+  <div style={{ width: size }} className="w-full">
+    <div className="logo">
       <svg width="100%" height="100%" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_d)">
           <path
@@ -44,10 +42,12 @@ export const Logo: React.FC<{ size: any }> = ({ size }) => (
           #1e88e5 180deg,
           #14bb75 360deg
         );
-        box-shadow: 0 14px 20px rgba(0, 0, 0, 0.125), inset 0px -3px 4px rgba(0, 0, 0, 0.25),
+        box-shadow:
+          0 14px 20px rgba(0, 0, 0, 0.125),
+          inset 0px -3px 4px rgba(0, 0, 0, 0.25),
           inset 0px 4px 2px rgba(255, 255, 255, 0.44);
         border-radius: 50%;
       }
     `}</style>
-  </Box>
+  </div>
 );

@@ -1,5 +1,3 @@
-import { Box, LinkBox, LinkOverlay } from "@chakra-ui/react";
-
 function _Image() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="none" viewBox="0 0 501 66">
@@ -30,12 +28,12 @@ function _Image() {
 
 export function CheckOutMyLynk() {
   return (
-    <LinkBox>
-      <LinkOverlay href={"https://lynk.colegaw.in"} isExternal>
-        <Box w={72}>
+    <div className="relative group">
+      <a href="https://lynk.colegaw.in" target="_blank" rel="noopener noreferrer" className="block">
+        <div className="w-72">
           <_Image />
-        </Box>
-      </LinkOverlay>
-    </LinkBox>
+        </div>
+      </a>
+    </div>
   );
 }

@@ -1,42 +1,27 @@
-import React from "react";
-
-import { SystemStyleObject, VStack } from "@chakra-ui/react";
 import deepmerge from "deepmerge";
 
 const styles = {
-  "> *": { w: "full", opacity: 1, fontSize: "md" },
-  a: {
-    textDecoration: "underline",
-  },
-  "ul,ol": {
-    pl: 6,
-    counterReset: "section",
-    listStyleType: "none",
-  },
-  li: {
-    counterIncrement: "section",
-    mt: 3,
-    pl: 3,
-    "&:nth-of-type(1)": {
-      mt: 0,
-    },
-  },
-  "ul li::marker": {
-    content: `"•"`,
-    fontSize: "xl",
-    lineHeight: "0",
-    color: "gray.400",
-  },
-  "ol li::marker": {
-    content: `counter(section) "."`,
-    fontSize: "lg",
-    lineHeight: "0",
-    color: "gray.400",
-  },
+  "> *": "w-full opacity-100 text-md",
+  a: "underline",
+  "ul,ol": "pl-6 list-none",
+  li: "mt-3 pl-3 counter-increment-section",
+  "li:first-of-type": "mt-0",
+  "ul li::marker": "content-['•'] text-xl leading-none text-gray-400",
+  "ol li::marker": "content-[counter(section) '.'] text-lg leading-none text-gray-400",
 };
 
-export const MarkdownStyle = ({ sx, children }: { sx?: SystemStyleObject; children: React.ReactNode }) => (
-  <VStack spacing={6} sx={deepmerge(styles, sx || {})}>
-    {children}
-  </VStack>
-);
+const applyStyles = classNameMap =>
+  Object.entries(classNameMap)
+    .map(([selector, classNames]) => `${selector} { ${classNames} }`)
+    .join(" ");
+
+export const MarkdownStyle = ({ sx, children }) => {
+  const mergedStyles = deepmerge(styles, sx || {});
+
+  return (
+    <div className="flex flex-col space-y-6">
+      <style>{applyStyles(mergedStyles)}</style>
+      {children}
+    </div>
+  );
+};

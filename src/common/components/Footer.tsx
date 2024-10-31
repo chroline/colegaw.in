@@ -1,46 +1,30 @@
-import { Box, Flex, Link, Stack, Text, VStack, useColorModeValue } from "@chakra-ui/react";
 import { RiHeartFill } from "react-icons/ri";
-import tinycolor from "tinycolor2";
-
-import theme from "~/core/util/theme";
-
 import { CheckOutMyLynk } from "~/common/components/CheckOutMyLynk";
 
 export function Footer() {
-  const backgroundColor = useColorModeValue("gray.100", "gray.800");
-  const borderColor = tinycolor(useColorModeValue(theme.colors.gray[200], theme.colors.gray[700]))
-    .setAlpha(0.75)
-    .toString();
-
   return (
-    <Flex
-      as={"footer"}
-      direction={"column"}
-      justify={"start"}
-      align={"center"}
-      position={"relative"}
-      backgroundColor={backgroundColor}
-      borderTop={"1px solid"}
-      borderColor={borderColor}
-    >
-      <VStack align={"center"} py={24} px={6}>
+    <footer className="relative flex flex-col items-center bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+      <div className="flex flex-col items-center py-24 px-6">
         <CheckOutMyLynk />
-        <Stack direction={{ base: "column", md: "row" }} textAlign={"center"} spacing={0} pt={6}>
-          <Flex justify={"center"} align={"center"} fontWeight={"medium"} opacity={0.7}>
-            <Text as={"span"}>made with</Text>
-            <Box as={"span"} color={"pink.500"} mx={1}>
+        <div className="flex flex-col md:flex-row text-center space-y-4 md:space-y-0 md:space-x-4 pt-6">
+          <div className="flex items-center font-medium opacity-70 justify-center">
+            <span>made with</span>
+            <span className="mx-1 text-pink-500">
               <RiHeartFill />
-            </Box>
-            <Text as={"span"}>by Cole Gawin</Text>
-            <Text as={"span"} display={{ base: "none", md: "initial" }}>
-              &nbsp;·&nbsp;
-            </Text>
-          </Flex>
-          <Link href={"https://github.com/chroline/colegaw.in"} isExternal opacity={0.5}>
+            </span>
+            <span>by Cole Gawin</span>
+            <span className="hidden md:inline">&nbsp;·&nbsp;</span>
+          </div>
+          <a
+            href="https://github.com/chroline/colegaw.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="opacity-50"
+          >
             View source on Github
-          </Link>
-        </Stack>
-      </VStack>
-    </Flex>
+          </a>
+        </div>
+      </div>
+    </footer>
   );
 }

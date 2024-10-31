@@ -1,21 +1,13 @@
 import React from "react";
 
-import { Text, useColorModeValue } from "@chakra-ui/react";
-
-import theme from "~/core/util/theme";
-
-export const HighlightText: React.FC<{ color: keyof typeof theme.colors; children: React.ReactNode }> = ({
-  color,
-  children,
-}) => {
-  const highlightColor = useColorModeValue(theme.colors[color][200], theme.colors[color][800]);
-
+export const HighlightText: React.FC<{
+  color: keyof typeof theme.colors;
+  children: React.ReactNode;
+}> = ({ color, children }) => {
   return (
-    <Text as={"span"} color={highlightColor} fontWeight={"bold"} fontStyle={"normal"}>
-      <span className={"highlight"}>
-        <Text as={"span"} color={theme.colors[color][500]}>
-          {children}
-        </Text>
+    <span className={`font-bold not-italic`}>
+      <span className="highlight">
+        {children}
         <style jsx>{`
           span.highlight {
             background: linear-gradient(
@@ -28,6 +20,6 @@ export const HighlightText: React.FC<{ color: keyof typeof theme.colors; childre
           }
         `}</style>
       </span>
-    </Text>
+    </span>
   );
 };

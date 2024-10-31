@@ -1,0 +1,31 @@
+import { AnimationControls, motion, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
+import Text from "~/data/content/about-summary.mdx";
+import { item } from "~/lib/animations";
+
+export default function Summary({ animate }: { animate: AnimationControls }) {
+  const aboutRef = useRef(null);
+  const isInView = useInView(aboutRef, { once: true });
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (isInView) {
+      timer = setTimeout(() => {
+        animate.start("visible");
+      }, 400);
+    }
+    return () => clearTimeout(timer); // Clean up timeout if component unmounts
+  }, [isInView, animate]);
+
+  return (
+    <motion.div
+      ref={aboutRef}
+      initial="hidden"
+      animate={animate}
+      variants={item}
+      className="prose max-w-[40rem] text-center text-lg"
+    >
+      <Text />
+    </motion.div>
+  );
+}

@@ -1,38 +1,18 @@
-import { Box, useBreakpointValue, useColorModeValue } from "@chakra-ui/react";
-import tinycolor from "tinycolor2";
-
-import theme from "~/core/util/theme";
-
 export const HeroDecoration = () => {
-  const strokeColor = useColorModeValue(
-    theme.colors.gray[300],
-    tinycolor(theme.colors.gray[700]).setAlpha(0.6).toString()
-  );
-  const isLG = useBreakpointValue({ base: false, lg: true });
-
   return (
-    <Box
-      sx={{
-        position: "absolute",
-        width: "100%",
-        height: isLG ? "120%" : "50%",
-        //background: theme.colors.blueGray[300],
-        maskImage: `radial-gradient(100% 100% at top ${isLG ? "right" : "center"},white,transparent)`,
-      }}
+    <div
+      className="
+        absolute w-full 
+        lg:h-[120%] h-[50%] 
+        mask-[radial-gradient(100%_100%_at_top_center,white,transparent)] 
+        lg:mask-[radial-gradient(100%_100%_at_top_right,white,transparent)]
+      "
     >
-      <Box
-        as="svg"
-        sx={{
-          width: "100%",
-          height: "100%",
-          stroke: strokeColor,
-        }}
-      >
+      <svg className="w-full h-full stroke-gray-300">
         <defs>
           <pattern
             id="0787a7c5-978c-4f66-83c7-11c213f99cb7"
-            width={isLG ? "100" : "80"}
-            height={isLG ? "100" : "80"}
+            className="lg:w-[100px] w-[80px] lg:h-[100px] h-[80px]"
             x="50%"
             y="-1"
             patternUnits="userSpaceOnUse"
@@ -40,8 +20,8 @@ export const HeroDecoration = () => {
             <path d="M.5 200V.5H200" fill="none"></path>
           </pattern>
         </defs>
-        <rect width="100%" height="100%" strokeWidth="0" fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)"></rect>
-      </Box>
-    </Box>
+        <rect width="100%" height="100%" strokeWidth="0" fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)" />
+      </svg>
+    </div>
   );
 };

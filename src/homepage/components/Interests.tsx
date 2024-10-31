@@ -1,20 +1,20 @@
-import { Button, VStack } from "@chakra-ui/react";
-
-import _Interests from "~/data/content/interests.mdx";
-
 import { MarkdownStyle } from "~/common/components/MarkdownStyle";
+import _Interests from "~/data/content/interests.mdx";
 
 export function Interests() {
   return (
-    <VStack spacing={8} align={"end"} w={"full"}>
+    <div className="flex flex-col items-end space-y-8 w-full">
       <MarkdownStyle>
         <_Interests />
       </MarkdownStyle>
-      <a href={"https://linkedin.com/in/colegawin"} target={"_blank"}>
-        <Button size={"lg"} colorScheme={"blue"} variant={"link"}>
-          View my resume →
-        </Button>
+      <a
+        href="https://linkedin.com/in/colegawin"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-500 text-lg hover:underline"
+      >
+        View my resume →
       </a>
-    </VStack>
+    </div>
   );
 }
