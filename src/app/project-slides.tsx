@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const Slide = ({ id, title }) => (
+const Slide = ({ id, title }: { id: string; title: string }) => (
   <div className="group relative transition hover:-translate-y-2">
     <div className="aspect-[2/1] w-72 overflow-hidden rounded-lg bg-white shadow-md transition-transform duration-200 ease-in-out group-hover:shadow-lg md:w-80 lg:w-96">
       <a href={`https://by.colegaw.in/${id}`} target="_blank" rel="noopener noreferrer" className="block h-full w-full">

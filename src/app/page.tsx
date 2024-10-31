@@ -7,12 +7,10 @@ import { motion, useAnimation } from "framer-motion";
 import Head from "next/head";
 import { useEffect } from "react";
 import { ProjectSlides } from "~/app/project-slides";
-import { Footer } from "~/common/components/Footer";
-import { Logo } from "~/common/components/Logo";
-import { MarkdownStyle } from "~/common/components/MarkdownStyle";
-import { NameLogo } from "~/common/components/NameLogo";
-import { AboutText } from "~/homepage/components/AboutText";
-import { container, delayItem, item } from "~/lib/animations";
+import { Footer } from "~/components/Footer";
+import { Logo } from "~/components/Logo";
+import { NameLogo } from "~/components/NameLogo";
+import { container, item } from "~/lib/animations";
 
 const Index = () => {
   const controlsHero = useAnimation();

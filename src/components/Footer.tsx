@@ -1,13 +1,13 @@
 import { RiHeartFill } from "react-icons/ri";
-import { CheckOutMyLynk } from "~/common/components/CheckOutMyLynk";
+import { CheckOutMyLynk } from "~/components/CheckOutMyLynk";
 
 export function Footer() {
   return (
-    <footer className="relative flex flex-col items-center bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
-      <div className="flex flex-col items-center py-24 px-6">
+    <footer className="relative flex flex-col items-center border-t border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
+      <div className="flex flex-col items-center px-6 py-24">
         <CheckOutMyLynk />
-        <div className="flex flex-col md:flex-row text-center space-y-4 md:space-y-0 md:space-x-4 pt-6">
-          <div className="flex items-center font-medium opacity-70 justify-center">
+        <div className="flex flex-col space-y-4 pt-6 text-center md:flex-row md:space-x-4 md:space-y-0">
+          <div className="flex items-center justify-center font-medium opacity-70">
             <span>made with</span>
             <span className="mx-1 text-pink-500">
               <RiHeartFill />
