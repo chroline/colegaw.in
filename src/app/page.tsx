@@ -1,7 +1,9 @@
 "use client";
 
+import Experience from "./experience";
 import Hero from "./hero";
 import "./prose.scss";
+import Research from "./research";
 import Summary from "./summary";
 import { motion, useAnimation } from "framer-motion";
 import Head from "next/head";
@@ -65,6 +67,8 @@ const Index = () => {
         <div className="w-full px-6 py-32">
           <div className="flex flex-col items-center gap-16">
             <Summary animate={controlsAboutSummary} />
+            <Research />
+            <Experience />
           </div>
         </div>
       </motion.div>

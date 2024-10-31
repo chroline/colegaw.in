@@ -1,6 +1,6 @@
 import { AnimationControls, motion, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
-import Text from "~/data/content/about-summary.mdx";
+import Text from "~/data/content/summary.mdx";
 import { item } from "~/lib/animations";
 import { markdownComponents } from "~/lib/markdown";
 
