@@ -1,7 +1,7 @@
 import React from "react";
 
-export const NameLogo: React.FC<{ size: any }> = ({ size }) => (
-  <div style={{ height: size }}>
+export const NameLogo = () => (
+  <div className="h-8 sm:h-10 md:h-12">
     <svg height={"100%"} viewBox="0 0 445 97" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect y="69" width="445" height="18" fill="url(#paint0_linear_803_2)" fillOpacity="0.4" />
       <path

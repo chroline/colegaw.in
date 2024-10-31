@@ -23,7 +23,7 @@ export default function Summary({ animate }: { animate: AnimationControls }) {
       initial="hidden"
       animate={animate}
       variants={item}
-      className="prose max-w-[40rem] text-center text-lg"
+      className="prose max-w-[40rem] text-justify sm:text-center sm:text-lg"
     >
       <Text />
     </motion.div>

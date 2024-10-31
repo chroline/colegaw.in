@@ -1,7 +1,7 @@
 import React from "react";
 
-export const Logo: React.FC<{ size: any }> = ({ size }) => (
-  <div style={{ width: size }} className="w-full">
+export const Logo = () => (
+  <div className="w-8 sm:w-10 md:w-12">
     <div className="logo">
       <svg width="100%" height="100%" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_d)">

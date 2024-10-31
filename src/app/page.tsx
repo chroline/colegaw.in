@@ -62,7 +62,7 @@ const Index = () => {
         >
           <ProjectSlides />
         </motion.div>
-        <div className="w-full py-32">
+        <div className="w-full px-6 py-32">
           <div className="flex flex-col items-center gap-16">
             <Summary animate={controlsAboutSummary} />
           </div>
