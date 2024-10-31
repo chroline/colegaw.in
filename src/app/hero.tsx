@@ -25,7 +25,7 @@ function Decoration() {
 
 export default function Hero({ animate }: { animate: AnimationControls }) {
   return (
-    <div className="relative w-full px-6 pb-32 pt-48">
+    <div className="relative w-full px-6 pb-24 pt-40 md:pb-32 md:pt-48">
       <Decoration />
       <motion.div
         className="relative m-auto max-w-2xl space-y-4 text-center"
@@ -36,7 +36,7 @@ export default function Hero({ animate }: { animate: AnimationControls }) {
         <motion.h1 className="font-heading text-4xl text-[2.5rem] font-semibold italic sm:text-5xl" variants={item}>
           Building technologies to augment human intelligence.
         </motion.h1>
-        <motion.p className="text-muted mx-auto font-heading text-xl md:text-2xl" variants={item}>
+        <motion.p className="text-muted mx-auto font-heading text-xl leading-tight md:text-2xl" variants={item}>
           applied AI engineer, cognitive science researcher, &&nbsp;human&#8209;centered technologist.
         </motion.p>
       </motion.div>
