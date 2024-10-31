@@ -49,8 +49,8 @@ const Index = () => {
       <motion.div initial="hidden" animate="visible" variants={container}>
         <div className="absolute top-0 z-10 flex h-24 w-full items-center justify-center">
           <div className="m-auto flex items-center justify-center gap-4">
-            <Logo size={"3rem"} />
-            <NameLogo size={"3rem"} />
+            <Logo />
+            <NameLogo />
           </div>
         </div>
         <Hero animate={controlsHero} />
