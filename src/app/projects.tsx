@@ -58,7 +58,7 @@ function ProjectItem({
       <img src={icon} alt={`${title} icon`} className="h-8 w-8 rounded" />
 
       {/* Title and Description */}
-      <div className="ml-4 flex flex-1 items-center gap-2">
+      <div className="ml-4 flex flex-1 flex-col sm:flex-row sm:items-center sm:gap-2">
         <p className="text-sm font-medium text-gray-900">{title}</p>
         <p className="text-sm text-gray-500">{description}</p>
       </div>
