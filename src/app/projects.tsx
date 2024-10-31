@@ -52,7 +52,7 @@ function ProjectItem({
       initial="hidden"
       animate={itemInView ? "visible" : "hidden"}
       variants={item}
-      className="flex items-center justify-between border-b border-dotted border-gray-300 py-2"
+      className="flex items-center justify-between border-b border-dashed border-gray-300 py-2"
     >
       {/* Icon */}
       <img src={icon} alt={`${title} icon`} className="h-8 w-8 rounded" />
