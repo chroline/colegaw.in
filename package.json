@@ -29,6 +29,7 @@
     "@types/tinycolor2": "^1.4.6",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.13.0",
+    "eslint-config-next": "^15.0.2",
     "postcss": "^8.4.47",
     "prettier": "latest",
     "prettier-plugin-tailwindcss": "^0.6.8",

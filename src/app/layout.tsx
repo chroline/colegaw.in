@@ -2,7 +2,7 @@ import "./globals.css";
 import { Manrope } from "next/font/google";
 import localFont from "next/font/local";
 
-export const polySans = localFont({
+const polySans = localFont({
   src: [
     { path: "../lib/vendor/PolySans/PolySans-Bulky.woff2", weight: "700", style: "normal" },
     { path: "../lib/vendor/PolySans/PolySans-BulkyItalic.woff2", weight: "700", style: "italic" },
