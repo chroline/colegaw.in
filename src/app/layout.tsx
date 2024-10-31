@@ -44,7 +44,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="overflow-x-hidden">
+    <html lang="en" className="overflow-x-hidden bg-[#F9FAFB]">
       <head>
         <link rel="shortcut icon" type="image/png" href="/favicon.png" />
         <meta name="theme-color" content="#fff" />
