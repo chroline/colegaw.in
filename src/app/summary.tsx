@@ -2,6 +2,7 @@ import { AnimationControls, motion, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Text from "~/data/content/about-summary.mdx";
 import { item } from "~/lib/animations";
+import { markdownComponents } from "~/lib/markdown";
 
 export default function Summary({ animate }: { animate: AnimationControls }) {
   const aboutRef = useRef(null);
@@ -25,7 +26,7 @@ export default function Summary({ animate }: { animate: AnimationControls }) {
       variants={item}
       className="prose max-w-[40rem] text-justify sm:text-center sm:text-lg"
     >
-      <Text />
+      <Text components={markdownComponents} />
     </motion.div>
   );
 }
