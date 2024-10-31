@@ -2,6 +2,7 @@
 
 import Experience from "./experience";
 import Hero from "./hero";
+import Projects from "./projects";
 import "./prose.scss";
 import Research from "./research";
 import Summary from "./summary";
@@ -69,6 +70,7 @@ const Index = () => {
             <Summary animate={controlsAboutSummary} />
             <Research />
             <Experience />
+            <Projects />
           </div>
         </div>
       </motion.div>
