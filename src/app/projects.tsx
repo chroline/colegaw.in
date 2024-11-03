@@ -52,9 +52,9 @@ function ProjectItem({
       </div>
       <div className="mb-1 mt-2 space-y-1 sm:mt-1">
         {accolades.map((item, i) => (
-          <div className="flex gap-1.5 text-sm italic text-muted sm:ml-11">
+          <div key={i} className="flex gap-1.5 text-sm italic text-muted sm:ml-11">
             <p>—</p>
-            <p key={i}>{item}</p>
+            <p>{item}</p>
           </div>
         ))}
       </div>

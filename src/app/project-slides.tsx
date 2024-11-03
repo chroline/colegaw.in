@@ -10,7 +10,12 @@ const Slide = ({ id, title }: { id: string; title: string }) => (
   <div className="group relative transition hover:-translate-y-2">
     <div className="aspect-[2/1] w-72 overflow-hidden rounded-lg bg-white shadow-md transition-transform duration-200 ease-in-out group-hover:shadow-lg md:w-80 lg:w-96">
       <a href={`https://by.colegaw.in/${id}`} target="_blank" rel="noopener noreferrer" className="block h-full w-full">
-        <Image src={`/img/projects/${id}.webp`} alt={title} fill className="h-full w-full rounded-lg object-cover" />
+        <Image
+          src={`/img/project-slides/${id}.webp`}
+          alt={title}
+          fill
+          className="h-full w-full rounded-lg object-cover"
+        />
       </a>
     </div>
     <div className="absolute inset-0 flex items-end rounded-lg bg-black bg-opacity-0 p-2 transition duration-300 group-hover:bg-opacity-50">
