@@ -3,28 +3,9 @@ import Image from "next/image";
 import { useRef } from "react";
 import { LuExternalLink } from "react-icons/lu";
 import Text from "~/data/content/research.mdx";
-import { delayItem, item } from "~/lib/animations";
+import researchData from "~/data/research.json";
+import { delayItem } from "~/lib/animations";
 import { markdownComponents } from "~/lib/markdown";
-
-const recentActivities = [
-  {
-    title: "Exploring a Cognitive Architecture for Learning Arithmetic Equations",
-    style: "italic",
-    image: "math-cog.jpeg",
-    url: "https://arxiv.org/abs/2405.04550",
-  },
-  {
-    title: "\"Do large language models have an in-built notion of 'common sense'?\"",
-    image: "llm-common-sense.jpeg",
-    url: "https://www.linkedin.com/posts/colegawin_chatgpt-cognitivescience-artificialintelligence-activity-7207080948952174593-RJu4",
-  },
-  {
-    title: "The Perceptron",
-    style: "bold",
-    image: "substack.png",
-    url: "https://colegawin.substack.com",
-  },
-];
 
 export default function Research() {
   const ref = useRef(null);
@@ -42,7 +23,7 @@ export default function Research() {
         <Text components={markdownComponents} />
       </div>
       <div className="space-y-4">
-        {recentActivities.map((activity, index) => (
+        {researchData.map((activity, index) => (
           <a key={index} href={activity.url} className="block" target="_blank">
             <div className="rounded-lg border bg-white p-4 shadow transition-shadow hover:shadow-md">
               <div className="flex items-start justify-between gap-3">

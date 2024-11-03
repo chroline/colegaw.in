@@ -1,0 +1,19 @@
+[
+  {
+    "title": "Exploring a Cognitive Architecture for Learning Arithmetic Equations",
+    "style": "italic",
+    "image": "math-cog.jpeg",
+    "url": "https://arxiv.org/abs/2405.04550"
+  },
+  {
+    "title": "\"Do large language models have an in-built notion of 'common sense'?\"",
+    "image": "llm-common-sense.jpeg",
+    "url": "https://www.linkedin.com/posts/colegawin_chatgpt-cognitivescience-artificialintelligence-activity-7207080948952174593-RJu4"
+  },
+  {
+    "title": "The Perceptron",
+    "style": "bold",
+    "image": "substack.png",
+    "url": "https://colegawin.substack.com"
+  }
+]
