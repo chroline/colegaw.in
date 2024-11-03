@@ -1,9 +1,40 @@
 {
-  "well-app": "Well: Reboot Your Mindset",
-  "webscraping-techniques": "Web-Scraping Techniques",
-  "lynk": "🔗 lynk",
-  "aspect-hub": "Aspect Hub",
-  "absurd-anecdotes": "Absurd Anecdotes!",
-  "handydocs": "HandyDocs",
-  "lightning-share": "LIGHTNING SHARE"
+  "aro": {
+    "title": "Aro",
+    "description": "No-code LaTeX Editor",
+    "accolades": ["LavaLab Spring 2024", "Judge's Choice Award for Best Product"],
+    "url": "https://aroeditor.io",
+    "year": 2024
+  },
+  "ekko": {
+    "title": "Ekko",
+    "description": "Conversational Language Learning Platform",
+    "accolades": [
+      "Stanford TreeHacks 2024",
+      "Best Use of Open-Source AI Models (sponsored by Together.AI)",
+      "Best Use of Bun.sh"
+    ],
+    "url": "https://www.clinicode.app/",
+    "year": 2024
+  },
+  "clinicode": {
+    "title": "Clinicode",
+    "description": "AI-enabled Automonous Medical Coding",
+    "accolades": [
+      "Sigma Eta Pi Fall 2023",
+      "Judge's Choice Award",
+      "Audience's Choice Award",
+      "USC OORI Grant Recipient",
+      "Techstars LA S24"
+    ],
+    "url": "https://www.clinicode.app/",
+    "year": 2023
+  },
+  "wellapp": {
+    "title": "The Well App",
+    "description": "Mental Wellness iOS App",
+    "accolades": ["2022 Congressional App Challenge", "5.2k Downloads"],
+    "url": "https://wellapp.me",
+    "year": 2022
+  }
 }

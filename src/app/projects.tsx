@@ -1,47 +1,25 @@
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 import Text from "~/data/content/projects.mdx";
+import projectsData from "~/data/projects.json";
 import { delayItem, item } from "~/lib/animations";
 import { markdownComponents } from "~/lib/markdown";
-
-// Sample data with placeholder images
-const projects = [
-  {
-    icon: "https://via.assets.so/img.jpg?w=32&h=32",
-    title: "Project Alpha",
-    description: "Description for Project Alpha",
-    year: "2024",
-  },
-  {
-    icon: "https://via.assets.so/img.jpg?w=32&h=32",
-    title: "Project Beta",
-    description: "Description for Project Beta",
-    year: "2024",
-  },
-  {
-    icon: "https://via.assets.so/img.jpg?w=32&h=32",
-    title: "Project Gamma",
-    description: "Description for Project Gamma",
-    year: "2023",
-  },
-  {
-    icon: "https://via.assets.so/img.jpg?w=32&h=32",
-    title: "Project Delta",
-    description: "Description for Project Delta",
-    year: "2023",
-  },
-];
 
 function ProjectItem({
   icon,
   title,
   description,
+  accolades,
+  url,
   year,
 }: {
   icon: string;
   title: string;
   description: string;
-  year: string;
+  accolades: string[];
+  url: string | undefined;
+  year: string | number;
 }) {
   const itemRef = useRef(null);
   const itemInView = useInView(itemRef, { once: true });
@@ -52,19 +30,34 @@ function ProjectItem({
       initial="hidden"
       animate={itemInView ? "visible" : "hidden"}
       variants={item}
-      className="flex items-center justify-between border-b border-dashed border-gray-300 py-2"
+      className="border-b border-dashed border-gray-300 py-2"
     >
-      {/* Icon */}
-      <img src={icon} alt={`${title} icon`} className="h-8 w-8 rounded" />
+      <div className="flex items-center justify-between">
+        {/* Icon */}
+        <div className="relative h-8 w-8 overflow-hidden">
+          <Image src={`/img/projects/${icon}.png`} alt={`${title} icon`} fill className="rounded object-cover" />
+        </div>
+        {/* Title and Description */}
+        <div className="block flex-1">
+          <p className="ml-3 text-left leading-none">
+            <a href={url} target="_blank">
+              <span className="text-sm font-medium text-gray-900">{title}</span>
+              <span className="text-sm text-muted">&nbsp;• {description}</span>
+            </a>
+          </p>
+        </div>
 
-      {/* Title and Description */}
-      <div className="ml-4 flex flex-1 flex-col sm:flex-row sm:items-center sm:gap-2">
-        <p className="text-sm font-medium text-gray-900">{title}</p>
-        <p className="text-sm text-gray-500">{description}</p>
+        {/* Year */}
+        <p className="hidden text-right text-sm text-muted sm:block">{year}</p>
       </div>
-
-      {/* Year */}
-      <p className="text-sm text-gray-400">{year}</p>
+      <div className="mb-1 mt-2 space-y-1 sm:mt-1">
+        {accolades.map((item, i) => (
+          <div className="flex gap-1.5 text-sm italic text-muted sm:ml-11">
+            <p>—</p>
+            <p key={i}>{item}</p>
+          </div>
+        ))}
+      </div>
     </motion.li>
   );
 }
@@ -79,16 +72,20 @@ export default function Projects() {
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={delayItem(0.2)}
-      className="prose max-w-xl text-justify sm:text-left sm:text-lg"
+      className="prose max-w-xl sm:text-left sm:text-lg"
     >
-      <Text components={markdownComponents} />
-      <ul className="mt-4">
-        {projects.map((project, index) => (
+      <div className="text-justify">
+        <Text components={markdownComponents} />
+      </div>
+      <ul className="mt-6">
+        {Object.entries(projectsData).map(([key, project]) => (
           <ProjectItem
-            key={index}
-            icon={project.icon}
+            key={key}
+            icon={key}
             title={project.title}
             description={project.description}
+            accolades={project.accolades}
+            url={project.url}
             year={project.year}
           />
         ))}

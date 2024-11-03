@@ -1,6 +1,6 @@
-import projectsData from "../../data/projects.json";
+import projectSlidesData from "../../data/project-slides.json";
 import Image from "next/image";
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
@@ -23,8 +23,7 @@ export function ProjectSlides() {
   const [is2XL, setIs2XL] = useState(false);
   const [spaceBetween, setSpaceBetween] = useState(20);
 
-  // Responsive breakpoint handling
-  React.useEffect(() => {
+  useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
       setIs2XL(width >= 1536); // 2XL breakpoint
@@ -40,7 +39,7 @@ export function ProjectSlides() {
   return (
     <div className="projects-slides w-full">
       <Swiper
-        initialSlide={is2XL ? Object.keys(projectsData).length - 1 : 0}
+        initialSlide={is2XL ? Object.keys(projectSlidesData).length - 1 : 0}
         loop={!is2XL}
         slidesPerView="auto"
         centeredSlides={true}
@@ -50,11 +49,13 @@ export function ProjectSlides() {
         modules={[Pagination]}
         className="mySwiper"
       >
-        {(is2XL ? Object.entries(projectsData).reverse() : Object.entries(projectsData)).map(([id, title]) => (
-          <SwiperSlide key={id}>
-            <Slide id={id} title={title} />
-          </SwiperSlide>
-        ))}
+        {(is2XL ? Object.entries(projectSlidesData).reverse() : Object.entries(projectSlidesData)).map(
+          ([id, title]) => (
+            <SwiperSlide key={id}>
+              <Slide id={id} title={title} />
+            </SwiperSlide>
+          )
+        )}
       </Swiper>
       <style jsx>{`
         :global(.projects-slides .swiper) {
