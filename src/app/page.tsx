@@ -10,9 +10,9 @@ import { motion, useAnimation } from "framer-motion";
 import Head from "next/head";
 import { useEffect } from "react";
 import { ProjectSlides } from "~/app/project-slides";
-import { Footer } from "~/components/Footer";
-import { Logo } from "~/components/Logo";
-import { NameLogo } from "~/components/NameLogo";
+import { Footer } from "~/components/footer";
+import { Logo } from "~/components/logo";
+import { NameLogo } from "~/components/name-logo";
 import { container, item } from "~/lib/animations";
 
 const Index = () => {

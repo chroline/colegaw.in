@@ -25,7 +25,7 @@ export default function Research() {
       <div className="space-y-4">
         {researchData.map((activity, index) => (
           <a key={index} href={activity.url} className="block" target="_blank">
-            <div className="rounded-lg border bg-white p-4 shadow transition-shadow hover:shadow-md">
+            <div className="rounded-lg border bg-white p-4 shadow transition hover:-translate-y-1 hover:shadow-md">
               <div className="flex items-start justify-between gap-3">
                 <div className="grid min-w-0 gap-4" style={{ gridTemplateColumns: "auto 1fr" }}>
                   <div className="relative overflow-hidden rounded-sm" style={{ aspectRatio: "1", height: "100%" }}>
