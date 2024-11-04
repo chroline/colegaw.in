@@ -25,13 +25,11 @@ const manrope = Manrope({
 
 export const metadata = {
   title: "Cole Gawin",
-  description:
-    "Working with passionate brands is my passion. I work with people to deliver quality experiences to meaningful audiences.",
+  description: "Building technologies to augment human intelligence.",
   openGraph: {
     url: "https://colegaw.in",
     title: "Cole Gawin",
-    description:
-      "Working with passionate brands is my passion. I work with people to deliver quality experiences to meaningful audiences.",
+    description: "Building technologies to augment human intelligence.",
     images: [{ url: "https://colegaw.in/img/seo.png" }],
     site_name: "Cole Gawin",
   },
