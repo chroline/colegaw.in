@@ -16,14 +16,6 @@
   "trailingComma": "es5",
   "useTabs": false,
   "vueIndentScriptAndStyle": false,
-  "importOrder": [
-    "^(react)$",
-    "^[^~.]",
-    "^(~[/]data)(.*)$",
-    "^(~[/]api)(.*)$",
-    "^(~[/]core)(.*)$",
-    "^(~)(.*)$",
-    "^[./]"
-  ],
+  "plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
   "importOrderSeparation": true
 }

@@ -1,0 +1,27 @@
+{
+  "lavalab": {
+    "name": "LavaLab",
+    "title": "Director of Development",
+    "duration": "Aug. 2024 – Present"
+  },
+  "ctcusc": {
+    "name": "Code the Change",
+    "title": "Tech Lead",
+    "duration": "Aug. 2024 – Present"
+  },
+  "nora-music": {
+    "name": "Nora Music",
+    "title": "Head of Product & Engineering",
+    "duration": "Jan. 2024 – Aug. 2024"
+  },
+  "class-companion": {
+    "name": "Class Companion",
+    "title": "Machine Learning Engineer",
+    "duration": "Aug. 2023 – Dec. 2023"
+  },
+  "fiveable": {
+    "name": "Fiveable",
+    "title": "Software Engineer II",
+    "duration": "Oct. 2021 – Aug. 2023"
+  }
+}

@@ -1,0 +1,22 @@
+.prose {
+  line-height: 1.7;
+
+  i,
+  em {
+    @apply font-heading italic;
+  }
+
+  b,
+  strong {
+    @apply font-heading font-medium;
+  }
+
+  a {
+    border-bottom: 1px dashed #bbb;
+    @apply transition-all;
+
+    &:hover {
+      border-bottom: 1px dashed black;
+    }
+  }
+}
