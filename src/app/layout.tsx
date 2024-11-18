@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import { Manrope } from "next/font/google";
 import localFont from "next/font/local";
 
@@ -47,7 +48,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="shortcut icon" type="image/png" href="/favicon.png" />
         <meta name="theme-color" content="#fff" />
       </head>
-      <body className={`${polySans.variable} ${manrope.variable} overflow-x-hidden font-sans`}>{children}</body>
+      <body className={`${polySans.variable} ${manrope.variable} overflow-x-hidden font-sans`}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
