@@ -23,10 +23,10 @@ export default function Experience() {
           {Object.entries(experienceData).map(([key, val], index, array) => (
             <div
               key={key}
-              className={`flex w-full items-start space-x-3 ${index !== array.length - 1 ? "border-b border-dashed pb-3" : ""} ${index !== 0 ? "pt-3" : ""}`}
+              className={`flex w-full items-center space-x-3 ${index !== array.length - 1 ? "border-b border-dashed pb-3" : ""} ${index !== 0 ? "pt-3" : ""}`}
             >
-              <div className="rounded-full border border-[#ebebed] bg-transparent p-1.5 shadow-sm">
-                <div className="relative h-7 w-7 overflow-hidden rounded-full">
+              <div className="rounded-full border border-[#ebebed] bg-transparent shadow-sm">
+                <div className="relative size-9 overflow-hidden rounded-full">
                   <Image src={`/img/work/${key}.png`} alt={`${val.name} logo`} fill style={{ objectFit: "cover" }} />
                 </div>
               </div>
