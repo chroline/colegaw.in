@@ -1,4 +1,11 @@
 {
+  "vigilante": {
+    "title": "Vigilante",
+    "description": "Online Misinformation Identification",
+    "accolades": ["Stanford TreeHacks 2025", "Big Data Visualization Award"],
+    "url": "https://usevigilante.com",
+    "year": 2025
+  },
   "aro": {
     "title": "Aro",
     "description": "No-code LaTeX Editor",
