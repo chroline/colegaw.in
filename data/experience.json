@@ -1,8 +1,13 @@
 {
+  "tandem": {
+    "name": "Tandem",
+    "title": "Applied AI Engineer Intern",
+    "duration": "May 2025 – Present"
+  },
   "lavalab": {
     "name": "LavaLab",
-    "title": "Director of Development",
-    "duration": "Aug. 2024 – Present"
+    "title": "President (ex. Director of Development)",
+    "duration": "May 2025 – Present"
   },
   "ctcusc": {
     "name": "Code the Change",
@@ -16,12 +21,12 @@
   },
   "class-companion": {
     "name": "Class Companion",
-    "title": "Machine Learning Engineer",
+    "title": "Founding Machine Learning Engineer",
     "duration": "Aug. 2023 – Dec. 2023"
   },
-  "fiveable": {
-    "name": "Fiveable",
-    "title": "Software Engineer II",
-    "duration": "Oct. 2021 – Aug. 2023"
+  "expo": {
+    "name": "Expo",
+    "title": "Developer Relations Intern",
+    "duration": "Jan. 2022 – Aug. 2022"
   }
 }
