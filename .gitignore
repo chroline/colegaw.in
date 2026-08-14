@@ -8,6 +8,12 @@
 /.next/
 /out/
 
+# typescript
+*.tsbuildinfo
+
+# playwright
+/test-results/
+
 # misc
 .DS_Store
 *.pem

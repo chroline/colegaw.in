@@ -8,7 +8,17 @@ type Entry = {
   note?: string;
 };
 
-export function EntryList({ entries, previews }: { entries: Entry[]; previews: PreviewMap }) {
+export function EntryList({
+  entries,
+  logo,
+  previews,
+  showImages = true,
+}: {
+  entries: Entry[];
+  logo?: string;
+  previews: PreviewMap;
+  showImages?: boolean;
+}) {
   return (
     <ul className="-my-2.5 divide-y divide-rule">
       {entries.map(entry => (
@@ -16,8 +26,10 @@ export function EntryList({ entries, previews }: { entries: Entry[]; previews: P
           <PreviewLink
             className="row row-link group"
             href={entry.href}
+            logo={logo}
             preview={previews[entry.href]}
             rel="noreferrer noopener"
+            showImage={showImages}
             target="_blank"
           >
             <span className="row-title">
