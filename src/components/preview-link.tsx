@@ -11,14 +11,24 @@ const CARD_WIDTH = 296;
 const X_FAVICON = "/img/favicons/x.svg";
 
 export function PreviewLink({
+  logo,
   preview,
   showFavicon,
+  showImage = true,
   children,
   className,
   href,
   ...anchorProps
-}: React.ComponentProps<"a"> & { preview?: LinkPreview; showFavicon?: boolean }) {
-  const hasCard = Boolean(preview?.title || preview?.image || preview?.description);
+}: React.ComponentProps<"a"> & {
+  logo?: string;
+  preview?: LinkPreview;
+  showFavicon?: boolean;
+  showImage?: boolean;
+}) {
+  // Resolved here rather than in PreviewBody so `hasCard` can never open a card whose
+  // only content would have been an image that never renders.
+  const image = showImage && preview?.image && isSafeImageSrc(preview.image) ? preview.image : undefined;
+  const hasCard = Boolean(preview?.title || preview?.description || image);
   const safeHref = typeof href === "string" && isHttpUrl(href) ? href : undefined;
   const favicon = showFavicon && preview?.favicon && isSafeImageSrc(preview.favicon) ? preview.favicon : undefined;
 
@@ -41,16 +51,26 @@ export function PreviewLink({
     <HoverCard closeDelay={120} openDelay={140}>
       <HoverCardTrigger asChild>{link}</HoverCardTrigger>
       <HoverCardContent align="start" className="w-[296px] overflow-hidden p-0" style={{ width: CARD_WIDTH }}>
-        <PreviewBody href={safeHref ?? preview.url} preview={preview} />
+        <PreviewBody href={safeHref ?? preview.url} image={image} logo={logo} preview={preview} />
       </HoverCardContent>
     </HoverCard>
   );
 }
 
-function PreviewBody({ href, preview }: { href: string; preview: LinkPreview }) {
+function PreviewBody({
+  href,
+  image,
+  logo,
+  preview,
+}: {
+  href: string;
+  image?: string;
+  logo?: string;
+  preview: LinkPreview;
+}) {
   const [imageFailed, setImageFailed] = useState(false);
   const overlayHref = isHttpUrl(href) ? href : undefined;
-  const image = preview.image && isSafeImageSrc(preview.image) ? preview.image : undefined;
+  const safeLogo = logo && isSafeImageSrc(logo) ? logo : undefined;
 
   return (
     <div className="relative bg-paper">
@@ -64,6 +84,11 @@ function PreviewBody({ href, preview }: { href: string; preview: LinkPreview }) 
           />
         )}
         <CardContent className="space-y-1 p-3.5">
+          {safeLogo && (
+            <span className="mb-1.5 flex">
+              <img alt="" className="h-6 w-auto" src={safeLogo} />
+            </span>
+          )}
           {preview.title && (
             <CardTitle className="line-clamp-2 text-[0.8125rem] font-medium leading-snug">{preview.title}</CardTitle>
           )}

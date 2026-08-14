@@ -101,13 +101,13 @@ export default async function Home() {
 
           <div style={{ "--i": 3 } as React.CSSProperties}>
             <Section label="Research">
-              <EntryList entries={research} previews={previews} />
+              <EntryList entries={research} logo="/img/logos/arxiv.svg" previews={previews} showImages={false} />
             </Section>
           </div>
 
           <div style={{ "--i": 4 } as React.CSSProperties}>
             <Section label="Writing">
-              <EntryList entries={writing} previews={previews} />
+              <EntryList entries={writing} previews={previews} showImages={false} />
             </Section>
           </div>
 
