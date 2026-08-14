@@ -6,7 +6,13 @@ const nextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   // Optionally, add any other Next.js config below
   images: {
-    formats: ["image/avif", "image/webp"],
+    // Serve the portraits byte-for-byte as authored; the optimizer's re-encode
+    // visibly degraded them. This disables /_next/image entirely.
+    unoptimized: true,
+    // Not inert despite `unoptimized`: without it, the `quality` props in
+    // page.tsx trigger the "quality not configured in images.qualities" dev
+    // warning (and Next 16 will require this config).
+    qualities: [95],
   },
 };
 

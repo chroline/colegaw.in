@@ -6,12 +6,9 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "lib": [
-      "dom",
-      "es2017"
-    ],
+    "lib": ["dom", "es2017"],
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": false,
@@ -23,12 +20,9 @@
     "incremental": true,
     "baseUrl": "./src",
     "paths": {
-      "~/*": [
-        "*"
-      ],
-      "~/data/*": [
-        "../data/*"
-      ]
+      "~/*": ["*"],
+      "~/data/*": ["../data/*"],
+      "@/*": ["*"]
     },
     "plugins": [
       {
@@ -36,13 +30,6 @@
       }
     ]
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "src/homepage/components/AboutText/Body.tsx",
-    ".next/types/**/*.ts"
-  ]
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts", "**/*.tsx", "mdx.d.ts", ".next/types/**/*.ts"]
 }

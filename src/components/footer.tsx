@@ -1,58 +1,57 @@
-import { RiHeartFill } from "react-icons/ri";
-import { SiGithub, SiInstagram, SiLinkedin, SiSubstack } from "react-icons/si";
+import { icons } from "~/components/icons";
+import { MapPopover } from "~/components/map-popover";
+import { Button } from "~/components/ui/button";
+import { Separator } from "~/components/ui/separator";
+import { elsewhere, route } from "~/data/site";
+import { buildTileGrid } from "~/lib/map";
+
+const MAP_WIDTH = 264;
+const MAP_HEIGHT = 176;
 
 export function Footer() {
   return (
-    <footer className="relative flex flex-col items-center border-t border-gray-200 bg-gray-100">
-      <div className="flex flex-col items-center gap-4 px-6 py-24">
-        <div className="flex space-x-6">
-          <a
-            href="https://linkedin.com/in/colegawin"
-            target="_blank"
-            className="text-black/50 transition-colors hover:text-black"
-          >
-            <SiLinkedin className="size-5" />
-          </a>
-          <a
-            href="https://colegawin.substack.com"
-            target="_blank"
-            className="text-black/50 transition-colors hover:text-black"
-          >
-            <SiSubstack className="size-5" />
-          </a>
-          <a
-            href="https://github.com/chroline"
-            target="_blank"
-            className="text-black/50 transition-colors hover:text-black"
-          >
-            <SiGithub className="size-5" />
-          </a>
-          <a
-            href="https://instagram.com/colegawin"
-            target="_blank"
-            className="text-black/50 transition-colors hover:text-black"
-          >
-            <SiInstagram className="size-5" />
-          </a>
-        </div>
-        <div className="flex flex-col space-y-4 pt-6 text-center font-heading md:flex-row md:space-y-0">
-          <div className="flex items-center justify-center font-medium opacity-70">
-            <span>made with</span>
-            <span className="mx-1 text-pink-500">
-              <RiHeartFill />
+    <footer className="mt-20">
+      <Separator className="bg-rule" />
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-4 pt-6">
+        <p className="shrink-0 text-meta text-faint">
+          {route.map((stop, index) => (
+            <span key={stop.code}>
+              {index > 0 && <span className="px-1">&rarr;</span>}
+              <MapPopover
+                code={stop.code}
+                label={stop.label}
+                tiles={buildTileGrid({
+                  lat: stop.lat,
+                  lon: stop.lon,
+                  zoom: stop.zoom,
+                  width: MAP_WIDTH,
+                  height: MAP_HEIGHT,
+                })}
+              />
             </span>
-            <span>in socal</span>
-            <span className="hidden md:mx-2 md:inline">&nbsp;·&nbsp;</span>
-          </div>
-          <a
-            href="https://github.com/chroline/colegaw.in"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="opacity-50 hover:underline"
-          >
-            View source on Github
-          </a>
-        </div>
+          ))}
+          <span className="pl-1">&middot; {new Date().getFullYear()}</span>
+        </p>
+        <ul className="ml-auto flex items-center gap-x-1">
+          {elsewhere.map(link => {
+            const Icon = icons[link.icon];
+            return (
+              <li key={link.href}>
+                <Button asChild className="size-8 text-subtle hover:text-ink [&_svg]:size-[1.05rem]" size="icon" variant="ghost">
+                  <a
+                    aria-label={link.label}
+                    href={link.href}
+                    rel="me noreferrer noopener"
+                    target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+                    title={link.label}
+                  >
+                    <Icon className="size-[1.05rem]" />
+                  </a>
+                </Button>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </footer>
   );
