@@ -23,7 +23,7 @@ export default async function Home() {
 
   return (
     <main className="mx-auto max-w-column px-6 pb-20 pt-28 md:max-w-4xl md:pt-40">
-      <div className="md:flex md:items-start md:gap-8 lg:gap-10">
+      <div className="md:flex md:items-start md:gap-8 lg:gap-20">
         {/* Between 768px and 960px the column's left edge sits under the fixed logo, so the
             pinned offset has to clear the logo's 56px bottom edge by the same 24px inset. */}
         <aside className="hidden md:sticky md:top-20 md:block md:w-60 md:shrink-0 lg:w-72">
@@ -62,7 +62,7 @@ export default async function Home() {
               width={144}
             />
             <h1 className="mt-5 text-[1.875rem] font-medium leading-none tracking-[-0.02em] md:mt-0">{person.name}</h1>
-            <p className="mt-3 text-lead text-subtle">{person.headline}</p>
+            <p className="text-lead text-subtle">{person.headline}</p>
           </header>
 
           <div style={{ "--i": 1 } as React.CSSProperties} className="prose-body mt-10">
