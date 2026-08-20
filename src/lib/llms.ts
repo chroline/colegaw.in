@@ -28,7 +28,6 @@ export async function generateLlmsTxt() {
       `# ${person.name}`,
       `> ${person.tagline}`,
       intro,
-      `Currently based in ${route[route.length - 1]!.label}.`,
       ["Thinking about:", ...interests.map(interest => `- ${interest.title}: ${interest.description}`)].join("\n"),
       section(
         "Research",
@@ -46,6 +45,7 @@ export async function generateLlmsTxt() {
         "Elsewhere",
         elsewhere.map(link => `- [${link.label}](${link.href})`)
       ),
+      `${route.map(stop => stop.code).join(" → ")} · ${new Date().getFullYear()}`,
     ].join("\n\n") + "\n"
   );
 }
