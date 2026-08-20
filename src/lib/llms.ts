@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import "server-only";
-import { elsewhere, experience, interests, person, research, route, writing } from "~/data/site";
+import { elsewhere, experience, interests, person, research, writing } from "~/data/site";
 
 function section(heading: string, items: string[]) {
   return [`## ${heading}`, ...items].join("\n");
@@ -45,7 +45,6 @@ export async function generateLlmsTxt() {
         "Elsewhere",
         elsewhere.map(link => `- [${link.label}](${link.href})`)
       ),
-      `${route.map(stop => stop.code).join(" → ")} · ${new Date().getFullYear()}`,
     ].join("\n\n") + "\n"
   );
 }
