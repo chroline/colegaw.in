@@ -3,10 +3,6 @@ import { join } from "node:path";
 import "server-only";
 import { elsewhere, experience, interests, person, research, route, writing } from "~/data/site";
 
-function linkItem(title: string, href: string, note?: string) {
-  return note ? `- [${title}](${href}): ${note}` : `- [${title}](${href})`;
-}
-
 function section(heading: string, items: string[]) {
   return [`## ${heading}`, ...items].join("\n");
 }
@@ -26,36 +22,30 @@ async function readIntroMarkdown() {
  */
 export async function generateLlmsTxt() {
   const intro = await readIntroMarkdown();
-  const here = route[route.length - 1]?.label;
 
   return (
     [
       `# ${person.name}`,
       `> ${person.tagline}`,
       intro,
-      here ? `Currently based in ${here}.` : null,
+      `Currently based in ${route[route.length - 1]!.label}.`,
       ["Thinking about:", ...interests.map(interest => `- ${interest.title}: ${interest.description}`)].join("\n"),
       section(
         "Research",
-        research.map(entry => linkItem(entry.title, entry.href, entry.note))
+        research.map(entry => `- [${entry.title}](${entry.href})`)
       ),
       section(
         "Writing",
-        writing.map(entry => linkItem(entry.title, entry.href, entry.note))
+        writing.map(entry => `- [${entry.title}](${entry.href})`)
       ),
       section(
         "Experience",
-        experience.map(entry => {
-          const note = [entry.note, entry.meta].filter(Boolean).join(", ");
-          return linkItem(entry.title, entry.href, note || undefined);
-        })
+        experience.map(entry => `- [${entry.title}](${entry.href}): ${entry.note}, ${entry.meta}`)
       ),
       section(
         "Elsewhere",
-        elsewhere.map(link => linkItem(link.label, link.href))
+        elsewhere.map(link => `- [${link.label}](${link.href})`)
       ),
-    ]
-      .filter((block): block is string => Boolean(block))
-      .join("\n\n") + "\n"
+    ].join("\n\n") + "\n"
   );
 }
