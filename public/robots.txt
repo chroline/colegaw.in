@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+# LLM-oriented overview of this site: /llms.txt
