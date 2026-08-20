@@ -26,7 +26,7 @@ export async function generateLlmsTxt() {
   return (
     [
       `# ${person.name}`,
-      `> ${person.tagline}`,
+      `> ${person.headline}`,
       intro,
       ["Thinking about:", ...interests.map(interest => `- ${interest.title}: ${interest.description}`)].join("\n"),
       section(
