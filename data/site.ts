@@ -1,3 +1,5 @@
+export const siteUrl = "https://colegaw.in";
+
 export const person = {
   name: "Cole Gawin",
   role: "Co-founder & CTO at Lemma",

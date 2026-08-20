@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Logo } from "~/components/logo";
 import { SmoothScroll } from "~/components/smooth-scroll";
 import { ThemeToggle } from "~/components/theme-toggle";
-import { person } from "~/data/site";
+import { person, siteUrl } from "~/data/site";
 
 const themeInitScript = `(function(){try{var t=localStorage.getItem("theme");var d=t==="dark"||(t!=="light"&&matchMedia("(prefers-color-scheme: dark)").matches);document.documentElement.classList.toggle("dark",d);document.querySelectorAll('meta[name="theme-color"]').forEach(function(m){m.setAttribute("content",d?"#18181b":"#f4f4f5")});}catch(e){}})();`;
 
@@ -48,7 +48,7 @@ const linearSans = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://colegaw.in"),
+  metadataBase: new URL(siteUrl),
   title: person.name,
   description: person.tagline,
   // The source mark lives at public/favicon.png (1024x1024, ~700 KB); only the
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "profile",
-    url: "https://colegaw.in",
+    url: siteUrl,
     siteName: person.name,
     title: person.name,
     description: person.tagline,
@@ -73,7 +73,10 @@ export const metadata: Metadata = {
     site: "@colegawin_",
   },
   alternates: {
-    canonical: "https://colegaw.in",
+    canonical: siteUrl,
+    types: {
+      "text/plain": "/llms.txt",
+    },
   },
 };
 
@@ -89,6 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html className={linearSans.variable} lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <link href="/llms.txt" rel="describedby" />
       </head>
       <body className="font-sans antialiased">
         <Link aria-label="Home" className="fixed left-6 top-6 z-50 size-8" href="/">
