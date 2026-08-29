@@ -2,6 +2,7 @@ import avatarSquare from "../../public/img/avatar.webp";
 import Image from "next/image";
 import { EntryList } from "~/components/entry-list";
 import { Footer } from "~/components/footer";
+import { HoverImagePreload } from "~/components/hover-image-preload";
 import { PreviewLink } from "~/components/preview-link";
 import { Section } from "~/components/section";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "~/components/ui/accordion";
@@ -21,8 +22,15 @@ export default async function Home() {
     ...experience.map(entry => entry.href),
   ]);
 
+  const hoverImages = [
+    ...introLinks.map(href => previews[href]?.image),
+    ...experience.map(entry => previews[entry.href]?.image),
+    "/img/logos/arxiv.svg",
+  ];
+
   return (
     <main className="mx-auto max-w-column px-6 pb-20 pt-28 md:max-w-4xl md:pt-40">
+      <HoverImagePreload hrefs={hoverImages} />
       <div className="md:flex md:items-start md:gap-8 lg:gap-20">
         {/* Between 768px and 960px the column's left edge sits under the fixed logo, so the
             pinned offset has to clear the logo's 56px bottom edge by the same 24px inset. */}

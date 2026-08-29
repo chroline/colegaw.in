@@ -17,9 +17,9 @@ export const route = [
     label: "University of Southern California",
     lat: 34.0224,
     lon: -118.2851,
-    zoom: 14,
+    zoom: 13,
   },
-  { code: "SFO", label: "San Francisco, California", lat: 37.7749, lon: -122.4194, zoom: 11 },
+  { code: "SFO", label: "San Francisco, California", lat: 37.7749, lon: -122.4194, zoom: 10 },
 ];
 
 /** URLs linked from `data/content/intro.mdx`, listed so their previews get prefetched. */
