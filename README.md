@@ -19,5 +19,7 @@ pnpm dev     # http://localhost:3000
 pnpm build
 ```
 
+Hover maps need `NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN` in `.env.local` (copy `.env.example`).
+
 The favicon is `src/app/icon.svg` and the social card is generated at build time from
 `src/app/opengraph-image.tsx`.
